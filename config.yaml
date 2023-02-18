@@ -1,0 +1,5 @@
+baseURL: 'https://labbrat.net/'
+languageCode: 'en-us'
+title: "Stepan's personal website"
+theme: 'PaperMod'
+
