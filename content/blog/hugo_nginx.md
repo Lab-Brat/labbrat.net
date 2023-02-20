@@ -86,5 +86,44 @@ as location for Nginx config in the next step.
 
 
 ### Step 4: Configuring TLS
+Encrypting traffic is a must these days, evens if it's a simple static website. 
+Thankfully, with Cloudflare creating certificates is as easy as clicking couple 
+buttons in the web admin panel.  
+
+Is TLS encryption even required if Cloudflare proxy is turned on? Of course it is! 
+Cloudflare proxy is encrypting traffic between client and the proxy, but traffic 
+between proxy and the server is still unencrypted.  
+
+We can starte by creating Origin Sertificate - a TLS certificate signed by Cloudflare 
+to authenticate your server.  
+Steps: `<zone_name>` -> `SSL/TLS` -> `Origin Server` -> `Create Certificate`  
+After following default steps Cloudflare will generate the certificate and a private key. 
+Both of them should be copied to the server with correct permissions.  
+**copying certificates**
+```bash
+vim /etc/ssl/cert.pem # copy certificate content to this file
+vim /etc/ssl/key.pem  # copy key content to this file 
+chmod 600 /etc/ssl/{cert,key}.pem
+```
+
+After certificate and key files are placed on the server, full encryption mode should 
+be turned on.  
+Steps: `<zone_name>` -> `SSL/TLS` -> `Origin Server` -> `Overview` -> `Full (strict)`  
+
+To make the website even more secure, it's possible to add an additional certificate to
+verify that all traffic from the webserver is received from Cloudflare's infrastructure. 
+Steps: Steps: `<zone_name>` -> `SSL/TLS` -> `Origin Server` -> `Authenticated Origin Pulls`  
+
+After turning origin pulls toggle on, go back to the server and download Cloudflare's 
+certificate that will be used for the verification.  
+**downloading and installing cloudflare's certificate**
+```bash
+wget https://developers.cloudflare.com/ssl/static/authenticated_origin_pull_ca.pem -O /etc/ssl/cloudflare.pem
+chmod 600 /etc/ssl/cloudflare.pem
+```
+
+After this step, all requests to the website that are not from Cloudflare will get 400 error. 
+This can be tested by entering `https:<server_ip>.<tld>` into the browser.
+
 
 ### Step 5: Launching the site
