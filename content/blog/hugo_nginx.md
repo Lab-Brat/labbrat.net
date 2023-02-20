@@ -35,8 +35,12 @@ Before doing anything though, it's best to update OS and configure the firewall.
 dnf update -y
 dnf install -y firewalld
 systemctl start --now firewalld
-firewall-cmd --add-service http --add-service https
-firewall-cmd --add-service http --add-service https --permanent
+firewall-cmd --add-service https
+firewall-cmd --add-service https --permanent
+
+# optional: forbid traffic wihout certificates
+firewall-cmd --remove-service http
+firewall-cmd --remove-service http --permanent
 ```  
 
 AlmaLinux's repository doesn't have the latest Nginx version, so we're 
@@ -85,6 +89,7 @@ The last command will render static content into `public` directory, which will 
 as location for Nginx config in the next step.
 
 
+### [work in progress]
 ### Step 4: Configuring TLS
 Encrypting traffic is a must these days, evens if it's a simple static website. 
 Thankfully, with Cloudflare creating certificates is as easy as clicking couple 
