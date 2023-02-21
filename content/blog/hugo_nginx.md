@@ -6,19 +6,19 @@ tags:
 - website
 title: Hosting a Hugo website with Nginx on RHEL.
 ---
-
+### [work in progress]
 ### Table of Contents
-- [Step 1: Buying a domain](#step-1-buying-a-domain)
+- [Step 1: Buying a Domain](#step-1-buying-a-domain)
 - [Step 2: Installing Nginx](#step-2-installing-nginx)
 - [Step 3: Installing Hugo](#step-3-installing-hugo)
-- [Step 4: Configuring TLS](#step-4-configuring-tls)
-- [Step 5: Launching the site](#step-5-launching-the-site)
+- [Step 4: Launching Website](#step-4-launching-website)
+- [Step 5: Configuring TLS](#step-5-configuring-tls)
 
 
 ### Step 1: Buying a domain
-Buying domain name can be tricky. I chose Cloudflare because:
+Buying domain names can be tricky. I chose Cloudflare because:
 * Best prices overall if you take into account long term usage (>3 years).
-* Has built-in reverse proxy functionaliy.
+* Has built-in reverse proxy functionality.
 * Supports TLS certificate management.
 * Captcha can be turned on in case of a DDOS attack.
 * Apart from the domain name costs all other features are free!
@@ -26,7 +26,7 @@ Buying domain name can be tricky. I chose Cloudflare because:
 
 ### Step 2: Installing Nginx
 The choice of a cloud provider and operating system is completely subjective, 
-anything will basically do. I chose AlmaLinux becuase I am a big fan of RHEL 
+anything will basically do. I chose AlmaLinux because I am a big fan of RHEL 
 Linux systems (not trying to start a fight about which distro is better).  
 
 Before doing anything though, it's best to update OS and configure the firewall.    
@@ -38,7 +38,7 @@ systemctl start --now firewalld
 firewall-cmd --add-service https
 firewall-cmd --add-service https --permanent
 
-# optional: forbid traffic wihout certificates
+# optional: forbid traffic without certificates
 firewall-cmd --remove-service http
 firewall-cmd --remove-service http --permanent
 ```  
@@ -58,8 +58,9 @@ EOF
 dnf install -y nginx
 ```
 
+
 ### Step 3: Installing Hugo
-Since `hugo` is not present in the repository, and becuase we are not 
+Since `hugo` is not present in the repository, and because we are not 
 looking for simple solutions, we will build and compile hugo from source code. 
 It's actually just 2 commands, but it might take some time for the build to complete.  
 **download and build Hugo**
@@ -89,9 +90,11 @@ The last command will render static content into `public` directory, which will 
 as location for Nginx config in the next step.
 
 
-### [work in progress]
-### Step 4: Configuring TLS
-Encrypting traffic is a must these days, evens if it's a simple static website. 
+### Step 4: Launching Website
+
+
+### Step 5: Configuring TLS
+Encrypting traffic is a must these days, even if it's a simple static website. 
 Thankfully, with Cloudflare creating certificates is as easy as clicking couple 
 buttons in the web admin panel.  
 
@@ -99,7 +102,7 @@ Is TLS encryption even required if Cloudflare proxy is turned on? Of course it i
 Cloudflare proxy is encrypting traffic between client and the proxy, but traffic 
 between proxy and the server is still unencrypted.  
 
-We can starte by creating Origin Sertificate - a TLS certificate signed by Cloudflare 
+We can start by creating Origin Certificate - a TLS certificate signed by Cloudflare 
 to authenticate your server.  
 Steps: `<zone_name>` -> `SSL/TLS` -> `Origin Server` -> `Create Certificate`  
 After following default steps Cloudflare will generate the certificate and a private key. 
@@ -116,7 +119,7 @@ be turned on.
 Steps: `<zone_name>` -> `SSL/TLS` -> `Origin Server` -> `Overview` -> `Full (strict)`  
 
 To make the website even more secure, it's possible to add an additional certificate to
-verify that all traffic from the webserver is received from Cloudflare's infrastructure. 
+verify that all traffic from the web server is received from Cloudflare's infrastructure. 
 Steps: Steps: `<zone_name>` -> `SSL/TLS` -> `Origin Server` -> `Authenticated Origin Pulls`  
 
 After turning origin pulls toggle on, go back to the server and download Cloudflare's 
@@ -130,5 +133,3 @@ chmod 600 /etc/ssl/cloudflare.pem
 After this step, all requests to the website that are not from Cloudflare will get 400 error. 
 This can be tested by entering `https:<server_ip>.<tld>` into the browser.
 
-
-### Step 5: Launching the site
