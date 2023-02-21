@@ -1,0 +1,14 @@
+name: hugo
+on: [push]
+jobs:
+
+  generate:
+    name: Generate static content
+    runs-on: self-hosted
+    steps:
+      
+    - name: Run Hugo
+      run: hugo
+
+    - name: Reload Nginx
+      run: systemctl reload nginx
