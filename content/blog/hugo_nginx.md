@@ -29,9 +29,9 @@ The choice of a cloud provider and operating system is completely subjective,
 anything will basically do. I chose AlmaLinux because I am a big fan of RHEL 
 Linux systems (not trying to start a fight about which distro is better).  
 
-Before doing anything though, it's best to update OS and configure the firewall.    
-**OS update and firewalld configuration**
+Before doing anything though, it's best to update OS and configure the firewall.  
 ```bash
+# OS update and firewalld configuration
 dnf update -y
 dnf install -y firewalld
 systemctl start --now firewalld
@@ -41,8 +41,8 @@ firewall-cmd --add-service https --permanent
 
 AlmaLinux's repository doesn't have the latest Nginx version, so we're 
 going to grab it from their official repository.  
-**adding Nginx repository**
 ```bash
+# adding Nginx repository
 cat <<EOF > /etc/yum.repos.d/Nginx.repo
 [nginx]
 baseurl = https://nginx.org/packages/centos/$releasever/$basearch/
@@ -59,8 +59,8 @@ dnf install -y nginx
 Since `hugo` is not present in the repository, and because we are not 
 looking for simple solutions, we will build and compile hugo from source code. 
 It's actually just 2 commands, but it might take some time for the build to complete.  
-**download and build Hugo**
 ```bash
+# download and build Hugo
 dnf install -y go gcc g++ git
 go install github.com/gohugoio/hugo@latest
 CGO_ENABLED=1 go install --tags extended github.com/gohugoio/hugo@latest
@@ -70,8 +70,8 @@ After `hugo` is done building, it's time to create a website and import a theme.
 Website is create with one command, and theme for this project will be 
 [PaperMod](https://github.com/adityatelange/hugo-PaperMod), 
 and it will be loaded as a git submodule.  
-**create site and install theme**
 ```bash
+# create site and install theme
 cd /opt
 hugo new site hugo_site
 cd hugo_site
@@ -92,6 +92,7 @@ website right away and see how it looks!
 For that, let's create a symlink in `/var/www` directory to point to the static files, 
 and then we can go and create a config file for Nginx:
 ```bash
+# create symlink and Nginx config
 ln -s /opt/hugo_site/public /var/www/domain_name.com
 vim /etc/nginx/conf.d/domain_name.com.conf
 ```
@@ -112,12 +113,14 @@ server {
 ```
 After that, check if Nginx syntax is valid, and reload Nginx service:
 ```bash
+# validate Nginx configs syntax and reload service
 nginx -t
 systemctl reload nginx
 ```
 If there were no errors, then the website should be available in the browser at 
 `http://domain_name.com`. Or it can be tested with curl without leaving the server:
 ```bash
+# get the web page
 curl https://www.domain_name.com
 ```  
 
@@ -136,8 +139,8 @@ to authenticate your server.
 Steps: `<zone_name>` -> `SSL/TLS` -> `Origin Server` -> `Create Certificate`  
 After following default steps Cloudflare will generate the certificate and a private key. 
 Both of them should be copied to the server with correct permissions.  
-**copying certificates**
 ```bash
+# copy certificates
 /etc/ssl/domain_name.com_cert.pem # copy certificate content to this file
 /etc/ssl/domain_name.com_key.pem  # copy key content to this file 
 chmod 600 /etc/ssl/domain_name.com_{cert,key}.pem
@@ -155,6 +158,7 @@ After turning origin pulls toggle on, go back to the server and download Cloudfl
 certificate that will be used for the verification.  
 **downloading and installing cloudflare's certificate**
 ```bash
+# download Cloudflare's certificate
 wget https://developers.cloudflare.com/ssl/static/authenticated_origin_pull_ca.pem -O /etc/ssl/cloudflare.pem
 chmod 600 /etc/ssl/cloudflare.pem
 ```
@@ -164,6 +168,7 @@ This can be tested by entering `https:<server_ip>.<tld>` into the browser.
 
 Lastly, let's update Nginx's confguration:
 ```
+# Nginx configuration file with TLS settings
 server {
     listen 80;
     listen [::]:80;
