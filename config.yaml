@@ -2,6 +2,7 @@ baseURL: 'https://labbrat.net/'
 languageCode: 'en-us'
 title: "Stepan Kulikov"
 theme: 'PaperMod'
+googleAnalytics: 'G-TP3TKT110S'
 
 menu:
   main:
