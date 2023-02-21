@@ -8,7 +8,7 @@ jobs:
     steps:
       
     - name: Run Hugo
-      run: hugo
+      run: sudo hugo -s /opt/website/
 
     - name: Reload Nginx
-      run: systemctl reload nginx
+      run: sudo systemctl reload nginx
