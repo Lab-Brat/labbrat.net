@@ -12,7 +12,7 @@ title: Hosting a Hugo website with Nginx on RHEL.
 - [Step 2: Installing Nginx](#step-2-installing-nginx)
 - [Step 3: Installing Hugo](#step-3-installing-hugo)
 - [Step 4: Launching Website](#step-4-launching-website)
-- [Step 5: Configuring TLS](#step-5-configuring-tls)
+- [Step 5: Configuring TLS](#step-5-configuring-tls)  
 
 
 ### Step 1: Buying a domain
@@ -21,7 +21,7 @@ Buying domain names can be tricky. I chose Cloudflare because:
 * Has built-in reverse proxy functionality.
 * Supports TLS certificate management.
 * Captcha can be turned on in case of a DDOS attack.
-* Apart from the domain name costs all other features are free!
+* Apart from the domain name costs all other features are free!  
 
 
 ### Step 2: Installing Nginx
@@ -37,10 +37,6 @@ dnf install -y firewalld
 systemctl start --now firewalld
 firewall-cmd --add-service https
 firewall-cmd --add-service https --permanent
-
-# optional: forbid traffic without certificates
-firewall-cmd --remove-service http
-firewall-cmd --remove-service http --permanent
 ```  
 
 AlmaLinux's repository doesn't have the latest Nginx version, so we're 
@@ -56,7 +52,7 @@ name = nginx repo
 EOF
 
 dnf install -y nginx
-```
+```  
 
 
 ### Step 3: Installing Hugo
@@ -87,10 +83,43 @@ hugo
 ```
 
 The last command will render static content into `public` directory, which will be used 
-as location for Nginx config in the next step.
+as location for Nginx config in the next step.  
 
 
 ### Step 4: Launching Website
+Since Nginx is installed and static files were genereated by Hugo, it's possible to launch the 
+website right away and see how it looks!  
+For that, let's create a symlink in `/var/www` directory to point to the static files, 
+and then we can go and create a config file for Nginx:
+```bash
+ln -s /opt/hugo_site/public /var/www/domain_name.com
+vim /etc/nginx/conf.d/domain_name.com.conf
+```
+```
+# Nginx configruation file content
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name domain_name.com www.domain_name.com;
+
+    root /var/www/domain_name.com;
+    index index.html;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+```
+After that, check if Nginx syntax is valid, and reload Nginx service:
+```bash
+nginx -t
+systemctl reload nginx
+```
+If there were no errors, then the website should be available in the browser at 
+`http://domain_name.com`. Or it can be tested with curl without leaving the server:
+```bash
+curl https://www.domain_name.com
+```  
 
 
 ### Step 5: Configuring TLS
@@ -109,9 +138,9 @@ After following default steps Cloudflare will generate the certificate and a pri
 Both of them should be copied to the server with correct permissions.  
 **copying certificates**
 ```bash
-vim /etc/ssl/cert.pem # copy certificate content to this file
-vim /etc/ssl/key.pem  # copy key content to this file 
-chmod 600 /etc/ssl/{cert,key}.pem
+/etc/ssl/domain_name.com_cert.pem # copy certificate content to this file
+/etc/ssl/domain_name.com_key.pem  # copy key content to this file 
+chmod 600 /etc/ssl/domain_name.com_{cert,key}.pem
 ```
 
 After certificate and key files are placed on the server, full encryption mode should 
@@ -131,5 +160,36 @@ chmod 600 /etc/ssl/cloudflare.pem
 ```
 
 After this step, all requests to the website that are not from Cloudflare will get 400 error. 
-This can be tested by entering `https:<server_ip>.<tld>` into the browser.
+This can be tested by entering `https:<server_ip>.<tld>` into the browser.  
 
+Lastly, let's update Nginx's confguration:
+```
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name domain_name.com www.domain_name.com;
+    return 302 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+  
+    ssl_certificate        /etc/ssl/domain_name.com_cert.pem;
+    ssl_certificate_key    /etc/ssl/domain_name.com_key.pem;
+    ssl_client_certificate /etc/ssl/cloudflare.pem;
+    ssl_verify_client on;
+  
+    server_name domain_name.com www.domain_name.com;
+  
+    root /var/www/domain_name.com;
+    index index.html;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+```
+After service reload the URL `https://domain_name.com` should render the website 
+with TLS encryption enabled. It can be verifying by checking the lock icon in the 
+browser next to the URL input field. 
