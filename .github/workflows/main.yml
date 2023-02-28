@@ -6,13 +6,9 @@ jobs:
     name: Generate static content
     runs-on: self-hosted
     steps:
-    
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-        
-    - name: Checkout latest changes
-      run: git checkout HEAD^
+
+    - name: Pull latest changes
+      run: cd /opt/website && sudo git pull
 
     - name: Run Hugo
       run: sudo hugo -s /opt/website/
