@@ -5,16 +5,8 @@ tags:
 - hugo
 - website
 title: Hosting a Hugo website with Nginx on RHEL.
+ShowToc: true
 ---
-### [work in progress]
-### Table of Contents
-- [\[work in progress\]](#work-in-progress)
-- [Table of Contents](#table-of-contents)
-- [Step 1: Buying a domain](#step-1-buying-a-domain)
-- [Step 2: Installing Nginx](#step-2-installing-nginx)
-- [Step 3: Installing Hugo](#step-3-installing-hugo)
-- [Step 4: Launching Website](#step-4-launching-website)
-- [Step 5: Configuring TLS](#step-5-configuring-tls)
 
 
 ### Step 1: Buying a domain
