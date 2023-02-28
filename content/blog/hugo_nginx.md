@@ -8,11 +8,13 @@ title: Hosting a Hugo website with Nginx on RHEL.
 ---
 ### [work in progress]
 ### Table of Contents
-- [Step 1: Buying a Domain](#step-1-buying-a-domain)
+- [\[work in progress\]](#work-in-progress)
+- [Table of Contents](#table-of-contents)
+- [Step 1: Buying a domain](#step-1-buying-a-domain)
 - [Step 2: Installing Nginx](#step-2-installing-nginx)
 - [Step 3: Installing Hugo](#step-3-installing-hugo)
 - [Step 4: Launching Website](#step-4-launching-website)
-- [Step 5: Configuring TLS](#step-5-configuring-tls)  
+- [Step 5: Configuring TLS](#step-5-configuring-tls)
 
 
 ### Step 1: Buying a domain
@@ -56,17 +58,40 @@ dnf install -y nginx
 
 
 ### Step 3: Installing Hugo
-Since `hugo` is not present in the repository, and because we are not 
-looking for simple solutions, we will build and compile hugo from source code. 
-It's actually just 2 commands, but it might take some time for the build to complete.  
+Unfortunately, `hugo` is not present in the AlmaLinux repository. 
+We can go nuts and compile hugo from source code 
+(it's actually just 2 [commands](https://github.com/gohugoio/hugo#:~:text=Hugo%20documentation.-,Build%20and%20Install%20the%20Binary%20from%20Source%20(Using%20the%20Go%20toolchain),-Prerequisite%20Tools) + some compile time), but for the sake of simplicity we will use the official pre-compiled binary. 
+Here is a small bash script to download and install the latest Hugo release:
 ```bash
-# download and build Hugo
-dnf install -y go gcc g++ git
-go install github.com/gohugoio/hugo@latest
-CGO_ENABLED=1 go install --tags extended github.com/gohugoio/hugo@latest
+#!/bin/bash
+# Download the latest tar.gz archive
+git_api_url=https://api.github.com/repos/gohugoio/hugo/releases/latest
+curl -s $git_api_url \
+        | grep -E "browser_.*_Linux-64bit.tar.gz" \
+        | head -n 1 \
+        | cut -d : -f 2,3 \
+        | tr -d \" \
+        | wget -qi - -O ./hugo_latest.tar.gz
+echo "[Hugo binary downloaded]"
+
+# Unpack the archive
+mkdir hugo_latest
+tar xf hugo_latest.tar.gz -C ./hugo_latest
+cp ./hugo_latest/hugo /usr/local/bin
+echo "[Hugo binary unpacked and installed]"
+
+# Clean-up
+rm -rf hugo_latest*
+echo "[Residual files deleted]"
 ```  
 
-After `hugo` is done building, it's time to create a website and import a theme. 
+Script will place `hugo` executable to `/usr/local/bin`, which should be in `$PATH` variable already. 
+To test it run:
+```
+hugo --help
+```
+
+Now it's time to create a website and import a theme. 
 Website is create with one command, and theme for this project will be 
 [PaperMod](https://github.com/adityatelange/hugo-PaperMod), 
 and it will be loaded as a git submodule.  
