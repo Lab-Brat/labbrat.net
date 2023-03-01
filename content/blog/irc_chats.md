@@ -21,7 +21,8 @@ Yes, if you are old school you can still use IRC in the terminal,
 and constantly remind everyone how old days were much better than now, 
 but that's not very productive.  
 
-In this article I will take a look at a modern IRC client - The Lounge. 
+In this article I will take a look at a modern IRC client - 
+[The Lounge](https://thelounge.chat). 
 It will be deployed as a Docker container and linked to a doman name.  
 
 What is need for this installation:
@@ -100,10 +101,12 @@ add to Nginx server configuration:
     }
 ```
 
-and reload Nginx:
+Then open `~/.thelounge/config.js` with any text aditor, and change the 
+`reverseProxy` parameter to `true`, and reload both Nginx and TheLounge:
 ```bash
 nginx -t
 systemctl reload nginx
+docker restart lng
 ```
 
 And that's it! IRC client should be available on `https://<domain>/lng`
