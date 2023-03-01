@@ -1,9 +1,10 @@
 ---
 date: "2023-02-28T23:19:01+03:00"
 tags:
- - irc
- - chat
- - self-hosting
+    - irc
+    - chat
+categories:
+    - self-hosting
 title: Using IRC in 2023
 ShowToc: true
 ---

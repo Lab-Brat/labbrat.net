@@ -1,8 +1,25 @@
 baseURL: 'https://labbrat.net/'
 languageCode: 'en-us'
-title: "Stepan Kulikov"
+title: "[Stepan_Kulikov@website ~]# cd ~"
 theme: 'PaperMod'
 googleAnalytics: 'G-TP3TKT110S'
+
+params:
+  env: production
+  ShowBreadCrumbs: true
+  ShowReadingTime: true
+
+  homeInfoParams:
+    Title: "Hi 🤗"
+    Content: "My life in one sentence =====> doing tech with questionable efficiency."
+  
+  socialIcons:
+    - name: Github
+      url: "https://github.com/Lab-Brat"
+    - name: Twitter
+      url: "https://twitter.com/Lab__Brat"
+    - name: LinkedIn
+      url: "https://www.linkedin.com/in/stepan-kulikov-v/"
 
 menu:
   main:
@@ -14,7 +31,7 @@ menu:
       name: tags
       url: /tags/
       weight: 20
-    - identifier: github
-      name: GitHub
-      url: https://github.com/Lab-Brat
+    - identifier: search
+      name: "Search"
+      pageref: "/search"
       weight: 30
