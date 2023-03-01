@@ -8,7 +8,7 @@ outputs:
     home:
         - HTML
         - RSS
-        - JSON # is necessary
+        - JSON
 
 params:
   env: production
@@ -30,7 +30,7 @@ params:
 
   homeInfoParams:
     Title: "Hi 🤗"
-    Content: "My life in one sentence =====> doing tech with questionable efficiency."
+    Content: "Welcome to my website!"
   
   socialIcons:
     - name: Github
@@ -50,7 +50,11 @@ menu:
       name: tags
       url: /tags/
       weight: 20
-    - identifier: search
-      name: "Search"
-      pageref: "/search"
+    - identifier: about
+      name: about
+      url: /about/
       weight: 30
+    - identifier: search
+      name: search
+      pageref: /search
+      weight: 40
