@@ -14,4 +14,4 @@ jobs:
       run: sudo hugo -s /opt/website/
 
     - name: Reload Nginx
-      run: sudo systemctl reload nginx
+      run: sudo docker restart nginx
