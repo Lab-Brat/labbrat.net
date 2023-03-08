@@ -3,7 +3,7 @@ title: "Awesome Article List"
 date: 2023-03-03T22:21:31+03:00
 tags:
     - articles
-category:
+categories:
     - miscellaneous
 ---
 

@@ -1,12 +1,12 @@
 ---
-date: "2023-02-18T17:57:22Z"
+title: "Hosting a Hugo website with Nginx on RHEL"
+date: 2023-02-18T17:57:22Z
 tags:
     - nginx
     - hugo
     - website
 categories:
     - self-hosting
-title: Hosting a Hugo website with Nginx on RHEL.
 ShowToc: true
 ---
 

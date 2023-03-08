@@ -1,10 +1,12 @@
 ---
 title: "Migrating Nginx to Docker"
+date: 2023-03-01T22:01:15+03:00
 tags:
     - nginx
     - docker
     - compose
-date: 2023-03-01T22:01:15+03:00
+categories:
+    - devops
 ---
 
 There are many ways to install a Nginx web server on Linux. 
