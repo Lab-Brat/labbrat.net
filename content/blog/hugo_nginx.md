@@ -246,4 +246,12 @@ systemctl reload nginx
 
 Enter website URL `https://domain_name.com` in the browser and check if the 
 website is working with TLS encryption. If it works a green lock icon should 
-appear in the browser next to the URL input field. 
+appear in the browser next to the URL input field.  
+
+
+### References
+* \[[Link](https://blog.cloudflare.com/registrar-for-everyone/)\] Registrar for Everyone 
+* \[[Link](https://gohugo.io/getting-started/quick-start/)\] Hugo Quickstart 
+* \[[Link](https://github.com/adityatelange/hugo-PaperMod/wiki)\] PaperMod Theme Wiki 
+* \[[Link](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/)\] Nginx Repository Installation 
+* \[[Link](https://www.digitalocean.com/community/tutorials/how-to-host-a-website-using-cloudflare-and-nginx-on-ubuntu-20-04)\] How To Host a Website Using Cloudflare and Nginx on Ubuntu 20.04 
