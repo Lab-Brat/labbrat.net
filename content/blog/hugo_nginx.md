@@ -56,7 +56,7 @@ so we're going to grab it from the official repository.
 # adding Nginx repository
 cat <<EOF > /etc/yum.repos.d/Nginx.repo
 [nginx]
-baseurl = https://nginx.org/packages/centos/$releasever/$basearch/
+baseurl = https://nginx.org/packages/centos/\$releasever/\$basearch/
 enabled = 1
 gpgcheck = 0
 name = nginx repo
