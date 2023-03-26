@@ -100,6 +100,18 @@ As the name suggests, this key will be used for signing commits, and to use it, 
 git commit -sS
 ```
 
+The `-s` flag will add a `Signed-off-by` line to the commit message, and the `-S` flag will
+sign the commit with the GPG key. Sometimes, especially when the GPG key has is password protected, 
+this error might pop up in the terminal:
+```
+# error: gpg: signing failed: Inappropriate ioctl for device
+```
+
+To fix this, run:
+```bash
+export GPG_TTY=$(tty)
+```
+
 
 ### References
 * \[ [Link](https://wiki.gentoo.org/wiki/Project:GURU/Information_for_Contributors) \] Information for Contributors
