@@ -8,7 +8,10 @@ categories:
 ---
 
 Articles I thought to be extremely entertaining and 
-from which I have learned a lot.
+from which I have learned [alot](https://hyperboleandahalf.blogspot.com/2010/04/alot-is-better-than-you-at-everything.html).
 
 #### Git
-- Git Branching Model [[Link]](https://nvie.com/posts/a-successful-git-branching-model/)
+- [[Link]](https://nvie.com/posts/a-successful-git-branching-model/) Git Branching Model 
+
+#### Tools
+- [[Link]](https://www.digitalocean.com/community/tools/nginx) NGINXConfig 
