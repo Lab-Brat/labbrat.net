@@ -29,11 +29,11 @@ eclean -d distfiles
 ### Preqrequisites
 **@world**  
 The `@world` set is a special set that contains all the packages that are installed on the system. It is used to update the system.  
-I did an overview of sets in [Gentoo World Set](https://labbrat.net/blog/gentoo_sets/).
+I did an overview of sets in [Gentoo World Set](https://labbrat.net/blog/gentoo/gentoo_sets/).
 
 **Use flags**  
 Use flags are used to control the compilation of packages. They are used to enable or disable certain features of a package. For example, the `X` use flag is used to enable or disable the X11 support in a package.  
-I did an overview of use flags in [Gentoo USE Flags](https://labbrat.net/blog/gentoo_use_flags/).
+I did an overview of use flags in [Gentoo USE Flags](https://labbrat.net/blog/gentoo/gentoo_use_flags/).
 
 
 **Command-line tools that might be used during the upgrade**
