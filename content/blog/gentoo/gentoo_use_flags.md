@@ -1,7 +1,13 @@
 ---
 title: "Gento USE Flags"
 date: 2023-03-19T13:54:13+03:00
-draft: true
+tags:
+    - Gentoo
+    - Linux
+    - Portage
+categories:
+    - Gentoo
+showToc: true
 ---
 
 USE flags that allow users to customize the way packages 
