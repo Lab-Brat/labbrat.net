@@ -15,3 +15,6 @@ from which I have learned [alot](https://hyperboleandahalf.blogspot.com/2010/04/
 
 #### Tools
 - [[Link]](https://www.digitalocean.com/community/tools/nginx) NGINXConfig 
+
+#### Misc
+- [[Link]](https://blog.samaltman.com/how-to-be-successful) How to be successful by Sam Altman
