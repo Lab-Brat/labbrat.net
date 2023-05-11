@@ -10,6 +10,9 @@ categories:
 Articles I thought to be extremely entertaining and 
 from which I have learned [alot](https://hyperboleandahalf.blogspot.com/2010/04/alot-is-better-than-you-at-everything.html).
 
+#### Infrastructure
+- [[Link]](https://openai.com/research/infrastructure-for-deep-learning)
+
 #### Git
 - [[Link]](https://nvie.com/posts/a-successful-git-branching-model/) Git Branching Model 
 
