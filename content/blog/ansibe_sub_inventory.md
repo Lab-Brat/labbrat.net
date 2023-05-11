@@ -8,18 +8,19 @@ categories:
 showToc: true
 ---
 
-Case study: There is a large inventory with many hosts. 
-The task is to create a sub-inventory with only the hosts 
-that have a specific package installed. So the playbook 
-has to run on all hosts and check if Docker is installed, 
-and if it is, then add the host to the sub-inventory.  
+Consider a large inventory file full of hosts. 
+The goal is to create a smaller list, a 'sub-inventory', 
+containing only hosts with a specific service - Docker, in this case.  
 
-How this might be useful?  
-In the current situation, when the large inventory was 
-compiled hosts with Docker were not organized into a 
-separate group. So the tasks below will find the hosts 
-with Docker, and later they can be used to create a group 
-in the inventory file.  
+The process involves running a playbook to examine every host. 
+If Docker exists on a host, this host gets added to the smaller list.  
+
+What's the significance of this action?  
+
+During the initial creation of the large inventory, 
+hosts with Docker weren't categorized separately. 
+By implementing these steps, Docker hosts will be easily identifiable 
+and will improve organization of the inventory.
 
 Tasks to achieve this:
 ```yaml
