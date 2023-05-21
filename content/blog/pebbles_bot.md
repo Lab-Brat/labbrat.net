@@ -95,3 +95,17 @@ Pebbles is now in `Remote` mode commands will be executed on the remote machine.
 After finishing all tasks on the server it's considered a good practice to 
 terminate unnecessary SSH sessions, this can be done with `/logout` command.
 
+
+### Sending notifications
+Apart from using Pebbles to run commands on the server, it also supports 
+communication in the opposite direction - sending notifications from the 
+server to users.  
+
+Simple pipe the command/script output to `pebot --notify`:
+```bash
+echo 'Testing Notifications!' | pebot --notify
+```
+
+![Pebbles: Send notifications from server](/img/lb_pebbles_notify.png)
+
+
