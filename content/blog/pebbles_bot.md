@@ -56,7 +56,7 @@ let's find the user's Telegram ID.
 To do that, find [@userinfobot](https://github.com/nadam/userinfobot) in Telegram 
 and initiate a conversation. Bot will send a message with `id` and `name`.  
 
-**GIT here**  
+![Pebbles: Get user ID and add to whitelist](/img/lb_pebbles_uinfo.png)
 
 `id` then can be used to create a variable:
 ```bash
@@ -68,7 +68,7 @@ export PEBBLES_USER_WHITELIST='12345678910,0000111122'
 The most basic usage of Pebbles is to pass commands to run on the machine it's 
 deployed at. It's done by calling `/run` commnd followed by the command:
 
-**GIF Here**
+![Pebbles: Run Commands Locally](/img/lb_pebbles_runloc.png)
 
 ### Run Commands Remotely
 To be able to succsessfully run commands on the remote servers, make sure to 
@@ -84,10 +84,7 @@ Host peb2.lab
 
 then run `/mode` and switch to `Remote` mode.   
 
-**GIF Here**
-
 After a SSH connection is established, commands can be run using `/run` command.
 
-**GIT Here**  
-
+![Pebbles: Run Commands Locally](/img/lb_pebbles_runrem.png)
 
