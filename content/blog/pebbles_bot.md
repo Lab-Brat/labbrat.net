@@ -1,5 +1,5 @@
 ---
-title: "Pebbles Linux Bot [WIP]"
+title: "Pebbles Linux Bot"
 date: 2023-05-01T16:58:09+03:00
 tags:
     - Linux
@@ -43,9 +43,9 @@ The detailed installation process can be found on the bot's
 focus on showcasing it's functionalities. To do that, 2 virtual machines will be 
 used:
 ```
-VM_Name   VM_IP          VM_OS         VM_Role
-peb1.lab  192.168.56.30  AlmaLinux 9   bot is deployed here
-peb2.lab  192.168.56.31  Ubuntu 22.04  bot will connect via SSH to here 
+VM_Name    VM_OS          VM_Role
+peb1.lab   AlmaLinux 9    bot is deployed here
+peb2.lab   Ubuntu 22.04   bot will connect via SSH to here 
 ```
 
 ### Whitelisting Users
@@ -64,16 +64,17 @@ export PEBBLES_USER_WHITELIST='12345678910,0000111122'
 ```
 
 
-### Run Commands Locally
+### Run Commands
 The most basic usage of Pebbles is to pass commands to run on the machine it's 
-deployed at. It's done by calling `/run` commnd followed by the command:
+deployed at. It's done by calling `/run` followed by the shell command.
 
 ![Pebbles: Run Commands Locally](/img/lb_pebbles_runloc.png)
 
-### Run Commands Remotely
-To be able to succsessfully run commands on the remote servers, make sure to 
-first config the `~/.ssh/config` file first. Password authentication is not 
-supported at all! Here is how config file looks on `peb2.lab`:
+
+To be able to successfully run commands on the remote servers, make sure to 
+first setup `~/.ssh/config` configuration file first. 
+Password authentication is not supported at all! 
+Here is an example of a SSH `config` file to connect to `peb2.lab`:
 ```
 # ~/.ssh/config file on peb1.lab
 Host peb2.lab
@@ -82,9 +83,15 @@ Host peb2.lab
 	IdentityFile /vagrant/vagrant_key
 ```
 
-then run `/mode` and switch to `Remote` mode.   
+Use `/mode` to switch to `Remote` mode, then call `/login` to establish a 
+SSH session with the remote host. It is only necessary to supply a hostname 
+becuase user, port and the key file are all defined in `~/.ssh/config`.  
 
-After a SSH connection is established, commands can be run using `/run` command.
+After a SSH connection is established, simply use `/run` command again. Since 
+Pebbles is now in `Remote` mode commands will be executed on the remote machine. 
 
 ![Pebbles: Run Commands Locally](/img/lb_pebbles_runrem.png)
+
+After finishing all tasks on the server it's considered a good practice to 
+terminate unnecessary SSH sessions, this can be done with `/logout` command.
 
