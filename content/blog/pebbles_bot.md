@@ -56,12 +56,12 @@ let's find the user's Telegram ID.
 To do that, find [@userinfobot](https://github.com/nadam/userinfobot) in Telegram 
 and initiate a conversation. Bot will send a message with `id` and `name`.  
 
-![Pebbles: Get user ID and add to whitelist](/img/lb_pebbles_uinfo.png)
-
 `id` then can be used to create a variable:
 ```bash
 export PEBBLES_USER_WHITELIST='12345678910,0000111122'
 ```
+
+![Pebbles: Get user ID and add to whitelist](/img/lb_pebbles_uinfo.png)  
 
 
 ### Run Commands
@@ -90,7 +90,7 @@ becuase user, port and the key file are all defined in `~/.ssh/config`.
 After a SSH connection is established, simply use `/run` command again. Since 
 Pebbles is now in `Remote` mode commands will be executed on the remote machine. 
 
-![Pebbles: Run Commands Locally](/img/lb_pebbles_runrem.png)
+![Pebbles: Run Commands Remotely](/img/lb_pebbles_runrem.png)  
 
 After finishing all tasks on the server it's considered a good practice to 
 terminate unnecessary SSH sessions, this can be done with `/logout` command.
@@ -106,6 +106,12 @@ Simple pipe the command/script output to `pebot --notify`:
 echo 'Testing Notifications!' | pebot --notify
 ```
 
-![Pebbles: Send notifications from server](/img/lb_pebbles_notify.png)
+![Pebbles: Send notifications from server](/img/lb_pebbles_notify.png)  
 
+
+### References
+* [[Link](https://core.telegram.org/bots/tutorial)] Telegrem bot intro
+* [[Link](https://linuxize.com/post/using-the-ssh-config-file/)] SSH Config
+* [[Link](https://ezgif.com)] Gif Making Website
+* [[Link](https://github.com/Lab-Brat/pebbles_bot)] Pebbles bot Github
 
