@@ -9,21 +9,21 @@ categories:
 ShowToc: true
 ---
 
-I really didn't think that it will ever be a neccessary to use IRC
-in moderen world. 
+I really didn't think that it will ever be a necessary to use IRC
+in modern world. 
 First of all, there are better alternatives like Discord and Matrix. 
 Secondly, IRC is a technology from 1988. For a bit of context, in 
 1988 Soviet Union was still a thing, and Guns and Roses just started 
 making good music.  
 
-Privilleged Gen-Z rhetoric aside, it's actually not all that bad. 
+Privileged Gen-Z rhetoric aside, it's actually not all that bad. 
 Yes, if you are old school you can still use IRC in the terminal, 
 and constantly remind everyone how old days were much better than now, 
 but that's not very productive.  
 
 In this article I will take a look at a modern IRC client - 
 [The Lounge](https://thelounge.chat). 
-It will be deployed as a Docker container and linked to a doman name.  
+It will be deployed as a Docker container and linked to a domain name.  
 
 What is need for this installation:
 * Domain name, in this case a working website running on Nginx
@@ -33,7 +33,7 @@ What is need for this installation:
 
 ### Step 1: Install The Lounge
 Installation is very simple and straightforward, as it is with almost 
-all conteinterized software. Navigate to any directory, and create a 
+all containerized software. Navigate to any directory, and create a 
 `docker-compose.yaml` with following content:
 ```yaml
 version: '2'
@@ -72,7 +72,7 @@ docker exec --user node -it lng thelounge list
 The second command will list existing users, and it can be used to verify that 
 a new user was really created.  
 
-At this point it's possible to authenticate in the web UI, but please remeber 
+At this point it's possible to authenticate in the web UI, but please remember 
 that when accessing site using `http`, all the information entered there is 
 unencrypted, so after `https` is implemented the password should be changed. 
 It can easily be done in the console:
@@ -101,7 +101,7 @@ add to Nginx server configuration:
     }
 ```
 
-Then open `~/.thelounge/config.js` with any text aditor, and change the 
+Then open `~/.thelounge/config.js` with any text editor, and change the 
 `reverseProxy` parameter to `true`, and reload both Nginx and TheLounge:
 ```bash
 nginx -t
