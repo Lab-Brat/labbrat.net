@@ -6,7 +6,7 @@ tags:
     - Telegram
     - bot
 categories:
-    - self-hosted
+    - self-hosting
 ShowToc: true
 ---
 
