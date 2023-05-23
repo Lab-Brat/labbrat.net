@@ -2,9 +2,9 @@
 title: "Ansible: Combining one variable from multiple sources"
 date: 2023-04-05T22:15:28+03:00
 tags:
-    - Ansible
+    - ansible
 categories:
-    - devops
+    - DevOps
 showToc: true
 ---
 

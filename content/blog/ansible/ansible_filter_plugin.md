@@ -2,9 +2,9 @@
 title: "Ansibe: Finding Public IP Addresses With Filter Plugin"
 date: 2023-05-11T21:56:13+03:00
 tags:
-    - Ansible
+    - ansible
 categories:
-    - devops
+    - DevOps
 showToc: true
 ---
 

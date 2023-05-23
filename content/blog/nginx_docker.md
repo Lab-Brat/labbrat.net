@@ -6,7 +6,7 @@ tags:
     - docker
     - compose
 categories:
-    - devops
+    - DevOps
 ---
 
 There are many ways to install a Nginx web server on Linux. 

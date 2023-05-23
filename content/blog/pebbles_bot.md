@@ -2,11 +2,12 @@
 title: "Pebbles Linux Bot"
 date: 2023-05-01T16:58:09+03:00
 tags:
-    - Linux
-    - Telegram
+    - linux
+    - telegram
     - bot
+    - messaging
 categories:
-    - self-hosting
+    - Self-Hosting
 ShowToc: true
 ---
 

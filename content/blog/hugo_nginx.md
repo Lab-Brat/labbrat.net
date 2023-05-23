@@ -6,7 +6,7 @@ tags:
     - hugo
     - website
 categories:
-    - self-hosting
+    - Self-Hosting
 ShowToc: true
 ---
 

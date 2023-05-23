@@ -2,9 +2,9 @@
 title: "Gentoo Package Sets"
 date: 2023-03-19T13:54:45+03:00
 tags:
-    - Gentoo
-    - Linux
-    - Portage
+    - gentoo
+    - linux
+    - portage
 categories:
     - Gentoo
 showToc: true

@@ -2,9 +2,9 @@
 title: "Gentoo: Set up GURU as a local repository"
 date: 2023-03-08T09:31:43+03:00
 tags:
-    - Gentoo
-    - Linux
-    - Portage
+    - gentoo
+    - linux
+    - portage
     - ebuild
 categories:
     - Gentoo

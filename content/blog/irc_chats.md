@@ -3,9 +3,9 @@ title: "Using IRC in 2023"
 date: 2023-02-28T23:19:01+03:00
 tags:
     - irc
-    - chat
+    - messaging
 categories:
-    - self-hosting
+    - Self-Hosting
 ShowToc: true
 ---
 

@@ -2,9 +2,9 @@
 title: "Ansibe: Create Sub Inventory"
 date: 2023-04-06T23:11:24+03:00
 tags:
-    - Ansible
+    - ansible
 categories:
-    - devops
+    - DevOps
 showToc: true
 ---
 

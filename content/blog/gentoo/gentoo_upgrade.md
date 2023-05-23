@@ -2,9 +2,9 @@
 title: "Gentoo: Upgrading the System"
 date: 2023-03-18T15:01:59+03:00
 tags:
-    - Gentoo
-    - Linux
-    - Portage
+    - gentoo
+    - linux
+    - portage
 categories:
     - Gentoo
 showToc: true
