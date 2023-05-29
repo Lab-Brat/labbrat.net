@@ -99,3 +99,18 @@ period, which gave me a plenty of time write it and received multiple
 revisions from the project mentor.  
 
 
+### Result
+After contacting the community, discussing project idea, doing some 
+contributions, writing and submitting a proposal there is nothing 
+else you can do but wait.  
+
+Organization after receiving all proposals will rank them. Then, 
+a request will be sent to Google for a certain number of slots 
+(basically a number of projects they want to host). Google will 
+most likely give an organization a bit less slots than they requested, 
+and this is where the initial ranking comes in.  
+
+A regular contributor won't play a part in this whole process and 
+can just patiently wait for about a month for both side to make their 
+decision.
+
