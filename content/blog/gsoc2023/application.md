@@ -12,12 +12,14 @@ ShowToc: true
 ---
 
 In this article I want to share my experience in applying to 
-Google Summer of Code 2023 (GSoC).  
+Google Summer of Code 2023 (GSoC). I was lucky enough to get 
+accepted and I hope that this article will help someone in 
+their future applications.  
 
 **Disclaimer**: This article is not a guide on how to get accepted, 
 it's just my journey and my thoughts on the process. The outcome 
 depends on your skills, organization, the project idea, Google and 
-most importantly luck.  
+most importantly - luck.  
 
 Let's start with what GSoC is all about.  
 
@@ -36,7 +38,7 @@ It's not for you if:
 * You already have extensive professional programming experience.
 * You already are an open source contributor.
 
-For me, by the time I decided to apply for GSoC2023 I already had 
+By the time I decided to apply for GSoC2023 I already had 
 2 years experience in a sysadmin role, but I had a very limited 
 programming experience. I knew a bit of Python and Bash, but 
 didn't know how to write a proper program or collaborate with other 
@@ -49,10 +51,11 @@ so I decided to apply!
 ### How to choose an organization?
 It's actually very simple - **don't try to be someone you are not!**  
 
-I work with Linux on my job everyday and use Arch on my personal laptop. 
+I work with Linux on my job everyday and use Arch [btw] on my personal laptop. 
 Sometimes, there are no other topics that I want to talk about except 
 distro wars or whether `systemd` is aligned with opensource philosophy 
 (it totally doesn't).  
+![Linux meme](/img/lb_linux_kidnap_meme.jpg)
 
 So for me the choice of organization was obvious - anything related to Linux.  
 
@@ -61,7 +64,8 @@ for rolling release distros and because Gentoo is iconic.
 
 
 ### How to apply?
-Official documentation is a better place to read about the detailed 
+[Official documentation](https://summerofcode.withgoogle.com/rules#:~:text=from%20the%20Program.-,GSoC%20Contributors.,-Eligibility.) 
+is a better place to read about the detailed 
 guide on how to apply. Here I will just talk about some aspects I 
 found to be the most crucial.  
 
@@ -113,4 +117,5 @@ and this is where the initial ranking comes in.
 A regular contributor won't play a part in this whole process and 
 can just patiently wait for about a month for both side to make their 
 decision.
+
 
