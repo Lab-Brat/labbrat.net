@@ -1,11 +1,9 @@
 ---
 title: "GSoC 2023: Application"
-date: 2023-05-23T09:21:52+03:00
+date: 2023-05-23T22:14:26+03:00
 tags:
     - opensource
     - gsoc
-    - google
-    - gentoo
 categories:
     - GSoC2023
 ShowToc: true
