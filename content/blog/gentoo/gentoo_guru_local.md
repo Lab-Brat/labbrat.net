@@ -77,8 +77,34 @@ location = /var/db/repos/guru
 Finally, test to see if ebuilds from the new repository are available:
 ```
 emerge --ask dev-python/sendgrid
-```  
+```
 
+**[ Small Tangent ]**  
+Normally setting up local repo is a bit more complex than this. 
+Here are the steps to create a local repo named `labbrat`:
+```bash
+mkdir -p /var/db/repos/labbrat/{metadata,profiles}
+chown -R portage:portage /var/db/repos/labbrat
+echo 'labbrat' > /var/db/repos/labbrat/profiles/repo_name 
+echo 'masters = gentoo' >> /var/db/repos/labbrat/metadata/layout.conf
+echo 'auto-sync = false' >> /var/db/repos/labbrat/metadata/layout.conf
+echo '[labbrat]' >> /etc/portage/repos.conf/labbrat.conf
+echo 'location = /var/db/repos/labbrat' >> /etc/portage/repos.conf/labbrat.conf
+```
+
+Then, to create an ebuild there:
+```bash
+cd /var/db/repos/labbrat/
+mkdir -p app-misc/your-app
+cd app-misc/your-app
+vim your-app.ebuild # write an ebuild
+ebuild your-app.ebuild manifest
+```
+
+And finally, install it!
+```bash
+emerge --ask app-misc/your-app
+```
 
 ### Step 4: Making Changes
 To create your own ebuilds and change existing ones, a string list of settings 
