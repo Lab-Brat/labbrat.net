@@ -41,7 +41,8 @@ point out what was changed to be used in Docker.
         try_files $uri $uri/ =404;
     }
 ...
-```  
+```
+
 **Note** <domain_name> is a valid domain name, and <--- points to changed part
 
 The only thing really changed in the path to website contents. It 
@@ -90,3 +91,11 @@ In case of an error, check logs:
 ```
 docker logs nginx
 ```
+
+If the configuration files will change, and it's essential to keep the 
+web server without interruptions, it can be safely reloaded with:
+```
+docker exec -it nginx nginx -s reload
+```
+
+where `nginx -s reload` is the command that will executed in the container.
