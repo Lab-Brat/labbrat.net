@@ -119,6 +119,11 @@ git config --local user.email "someone@example.com"
 git config --local user.signingkey KEY-FINGERPRINT
 ```
 
+To see which keys are available:
+```bash
+gpg --list-secret-keys --keyid-format=long
+```
+
 The `KEY-FINGERPRINT` is the signing GPG key (`[S]`) that was created in Step 0. 
 GURU repository does not verify the GPG key, but without it it's not possible to push changes. 
 As the name suggests, this key will be used for signing commits, and to use it, run:
@@ -140,7 +145,8 @@ export GPG_TTY=$(tty)
 
 
 ### References
-* \[ [Link](https://wiki.gentoo.org/wiki/Project:GURU/Information_for_Contributors) \] Information for Contributors
-* \[ [Link](https://wiki.gentoo.org/wiki/Creating_an_ebuild_repository) \] Creating an ebuild repository
-* \[ [Link](https://wiki.gentoo.org/wiki/Project:Infrastructure/Generating_GLEP_63_based_OpenPGP_keys)] Generating OpenPGP keys
-* \[ [Link](https://wiki.gentoo.org/wiki/Gentoo_git_workflow) \] Gentoo git workflow
+* [[Link](https://wiki.gentoo.org/wiki/Project:GURU/Information_for_Contributors)] Information for Contributors
+* [[Link](https://wiki.gentoo.org/wiki/Creating_an_ebuild_repository)] Creating an ebuild repository
+* [[Link](https://wiki.gentoo.org/wiki/Project:Infrastructure/Generating_GLEP_63_based_OpenPGP_keys)] Generating OpenPGP keys
+* [[Link](https://wiki.gentoo.org/wiki/Gentoo_git_workflow)] Gentoo git workflow
+* [[Link](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)] Github's guide on creating GPG keys
