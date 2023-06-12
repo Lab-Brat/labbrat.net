@@ -39,6 +39,22 @@ Apart from packaging I also penned some unit tests for the main Python file
 and did more testing in Docker containers and VMs.
 
 ### Challenges
+The hardest part undoubtedly was writing an ebuild. On paper this part sounds very straightforward - 
+ebuild is just a file that tells Portage how to install the program on Gentoo. On practice, however, 
+it's not very easy to do.  
+
+First of all, a local repository needs to be set up to test it properly, I've covered it 
+[here](https://labbrat.net/blog/gentoo/gentoo_guru_local/). Secondly, it's very confusing how to 
+account for all dependencies. My script uses Python, Bash and also requires some system packages, 
+all of which have their own dependencies. In the end, I settled on packaging Python and Bash files 
+into a Python module, and then only specify dependencies for this module and additional OS 
+packages in the ebuild.
+
+Writing unit tests is also very tricky. Not only that, it also seems useless and unnecessary. For me, 
+if the script passed all the test in Docker container then there is no need to write unit tests. 
+However, I should also note that my Docker tests are not automated and don't cover much of the functionality, 
+so probably I should focus more on writing unit tests....
+
 
 ### Plans for Week 3
 The updater's output currently is too messy and it's all over the place. Time to tidy that up!
