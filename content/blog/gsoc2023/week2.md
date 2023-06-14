@@ -69,8 +69,12 @@ so probably I should focus more on writing unit tests....
 
 
 ### Plans for Week 3
-The updater's output currently is too messy and it's all over the place. Time to tidy that up!
-An important part of the project is the parser that will read and understand logs from emerge. 
-I plan to start coding the parser next week.
+The updater's output currently is too messy and it's all over the place. 
+Time to tidy that up!  
 
-And I can't forget – I need to learn how to post blogs on Gentoo's website.
+An important part of the project is the parser that will read and understand 
+logs from emerge. I plan to start coding the parser next week.  
+
+And almost forgot – I need to learn how to post blogs on Gentoo's website and 
+post a project announcement on it. I think gentoo_update is ready to get 
+some more attention and user feedback.  
