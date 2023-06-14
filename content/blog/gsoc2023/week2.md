@@ -1,6 +1,6 @@
 ---
 title: "GSoC 2023: Week 2"
-date: 2023-06-04T09:21:52+03:00
+date: 2023-06-12T21:10:22+03:00
 tags:
     - opensource
     - gsoc
@@ -17,42 +17,54 @@ Project is hosted on [Github](https://github.com/Lab-Brat/gentoo_update)
 
 
 ### Progress on Week 2
-This week all about packaging and testing. 
-The updater is still in its infancy, but it's much better to 
-package everything nicely right away and not think about this in the future.
+This week was all about packaging and testing. 
+The updater is still in its infancy, but it's much better to package 
+everything nicely right away and not think about this in the future.  
 
-I kicked things off by bundling all the code into one directory and set it up as a Python module. 
-Then, with some automation magic I whipped up a Github Actions workflow that takes care of 
-publishing the package to PyPI. The idea was to make it installable using pip.
+I kicked things off by bundling all the code into one directory and 
+set it up as a Python module. Then, with some automation magic I 
+whipped up a Github Actions workflow that takes care of publishing 
+the package to PyPI. The idea was to make it installable using pip.  
 
-But to my surprise it turns out Python pip had it's permissions in OS severely limited after some 
-recent changes. To get the package to install on the system, it demands the ‘--break-system-packages’ 
-flag. This doesn't look very user friendly 😅.
+But to my surprise it turns out Python pip had it's permissions in 
+OS severely limited after some recent changes. To get the package to 
+install on the system, it demands the ‘--break-system-packages’ flag. 
+This doesn't look very user friendly 😅.  
 
 So, I took a different route and crafted an 
 [ebuild](https://github.com/Lab-Brat/gentoo_update_ebuild) instead, 
 which I've shipped off to the GURU 
 [repository](https://github.com/gentoo/guru/tree/master/app-admin/gentoo_update). 
-It's already merged to the main branch and is available for installation on Gentoo!  
+It's already on the main branch and is available for installation on Gentoo!  
 
-Apart from packaging I also penned some unit tests for the main Python file 
-and did more testing in Docker containers and VMs.
+Apart from packaging I also penned some unit tests for the main 
+Python file and did more testing in Docker containers and VMs.
 
 ### Challenges
-The hardest part undoubtedly was writing an ebuild. On paper this part sounds very straightforward - 
-ebuild is just a file that tells Portage how to install the program on Gentoo. On practice, however, 
-it's not very easy to do.  
+The hardest part undoubtedly was writing an ebuild. On paper it sounds very 
+straightforward - ebuild is just a file that tells Portage how to install 
+the program on Gentoo. In practice, however, it's not as easy as it sounds.  
 
-First of all, a local repository needs to be set up to test it properly, I've covered it 
-[here](https://labbrat.net/blog/gentoo/gentoo_guru_local/). Secondly, it's very confusing how to 
-account for all dependencies. My script uses Python, Bash and also requires some system packages, 
-all of which have their own dependencies. In the end, I settled on packaging Python and Bash files 
-into a Python module, and then only specify dependencies for this module and additional OS 
-packages in the ebuild.
+First of all, a local repository needs to be set up to test it properly, 
+I've covered it [here](https://labbrat.net/blog/gentoo/gentoo_guru_local/).  
 
-Writing unit tests is also very tricky. Not only that, it also seems useless and unnecessary. For me, 
-if the script passed all the test in Docker container then there is no need to write unit tests. 
-However, I should also note that my Docker tests are not automated and don't cover much of the functionality, 
+Secondly, it's very confusing how to account for all dependencies. My script 
+uses Python, Bash and also requires some system packages, all of which have 
+their own dependencies. In the end, I settled on packaging Python and Bash files 
+into a Python module, and then only specify dependencies for this module and 
+additional OS packages in the ebuild.  
+
+Thirdly, after the ebuild is ready and tested it actually needs to be pushed 
+to GURU repository. This part also can be tricky because commits need to be 
+signed by a GPG key, and if there are any problems in the ebuild you will get 
+emails from [Tinderbox](https://blogs.gentoo.org/ago/2020/07/04/gentoo-tinderbox/) - 
+Gentoo's CI and QA system, which catches all your ebuild mistakes and aggressively 
+tells you about them.  
+
+Writing unit tests is also very tricky. Not only that, it also seems useless 
+and unnecessary. For me, if the script passed all the test in Docker container 
+then there is no need to write unit tests. However, I should also note that my 
+Docker tests are not automated and don't cover much of the functionality, 
 so probably I should focus more on writing unit tests....
 
 
