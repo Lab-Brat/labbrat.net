@@ -13,14 +13,16 @@ This article is a summary of all the changes made on
 [Automated Gentoo System Updater](https://wiki.gentoo.org/wiki/Google_Summer_of_Code/2023/Ideas/Automated_Gentoo_system_updater) 
 project during **week 3** of GSoC.  
 
-Project is hosted on [Github](https://github.com/Lab-Brat/gentoo_update)  
+Project is hosted on [Github](https://github.com/Lab-Brat/gentoo_update), 
+blog post can be alson found on 
+[Gentoo Blogs](https://blogs.gentoo.org/gsoc/2023/06/17/week-3-report-automated-gentoo-system-updater/)  
 
 
 ### Progress on Week 3
 `gentoo_update` finally received some Github stars!  
 
 It also has received 2 issues ([#7](https://github.com/Lab-Brat/gentoo_update/issues/7) 
-and [#8](https://github.com/Lab-Brat/gentoo_update/issues/8)). In `#7` someome suggested 
+and [#8](https://github.com/Lab-Brat/gentoo_update/issues/8)). In `#7` someone suggested 
 to remove `update.sh` from being installed in the PATH, and only expose `gentoo-update` 
 as entry point.`#8` was a question if the program will be resolving circular dependencies. 
 I was more than happy to solve/answer both issues, and hope to see more in near future!  
