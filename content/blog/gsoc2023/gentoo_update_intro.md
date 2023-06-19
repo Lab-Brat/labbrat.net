@@ -11,7 +11,8 @@ ShowToc: true
 ---
 
 ### Introduction
-`gentoo_udpate` is a tool that automatically updates Gentoo Linux.  
+`gentoo_udpate` (Github [repo](https://github.com/Lab-Brat/gentoo_update)) 
+is a tool that automatically updates Gentoo Linux.  
 
 **Motivation**  
 Gentoo Linux gives users maximum flexibility and control over the system. 
@@ -56,4 +57,35 @@ notification sender. The updater is a Bash script that executes emerge to update
 the system and generates detailed logs for each action performed. Upon successful 
 completion of the updater, the parser reads the logs and compiles an update report. 
 The notification sender then dispatches this report to users.  
+
+
+### Usage
+At the moment `gentoo_update` can only install GLSA and `@world` updates and store 
+the output to a dedicated directory. It resides in [GURU](https://wiki.gentoo.org/wiki/Project:GURU) 
+overlay in [app-admin/gentoo_update](https://github.com/gentoo/guru/tree/master/app-admin/gentoo_update).  
+
+After enabling GURU overlay it can be installed via:
+```bash
+emerge --ask app-admin/gentoo_update
+```
+
+Here are some use cases:
+**Security update**
+```bash
+gentoo-update
+```
+
+**@world update**
+Run full system update, merge all new configuration files, restart all services that were 
+updated and display elogs.
+```bash
+gentoo-update --update-mode full --config-update-mode merge --daemon-restart y --read-logs y
+```
+
+update with `--keep-going` flag.
+```
+gentoo-update --update-mode full --args  "keep-going=y"
+```
+
+After an udpate a log file will be created in `/var/log/portage/gentoo_udpate/log_<timestamp>`.
 
