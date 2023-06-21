@@ -11,7 +11,7 @@ ShowToc: true
 ---
 
 ### Introduction
-`gentoo_udpate` (Github [repo](https://github.com/Lab-Brat/gentoo_update)) 
+`gentoo_update` (Github [repo](https://github.com/Lab-Brat/gentoo_update)) 
 is a tool that automatically updates Gentoo Linux.  
 
 **Motivation**  
@@ -25,7 +25,7 @@ some tools that are commonly used during an upgrade:
 [
     eix, equery, emaint, euse, etc-update, dispatch-conf,  
     eselect, elogv, needrestart, eclean, eclean-kernel, 
-    qcheck, revdep-rebuild, glsa-check, layman 
+    qcheck, revdep-rebuild, glsa-check, layman
 ]
 ```
 
@@ -42,6 +42,7 @@ This project addresses both issues:
 1. complicated update process 
 2. potential security issues caused by the lack of regular upgrades
 
+&nbsp; 
 
 ### Functionality
 Here are some of the things that gentoo_update will be able to:
@@ -50,7 +51,7 @@ Here are some of the things that gentoo_update will be able to:
 * Detect and handle update errors.
 * Schedule updates.
 * Generate a post-update report and send it via email and/or IRC chat.
-* Send push notifications to a **mobile app**.  
+* Send push notifications to a mobile app.  
 
 The program comprises three core components: the updater, the parser, and the 
 notification sender. The updater is a Bash script that executes emerge to update 
@@ -58,24 +59,31 @@ the system and generates detailed logs for each action performed. Upon successfu
 completion of the updater, the parser reads the logs and compiles an update report. 
 The notification sender then dispatches this report to users.  
 
+&nbsp; 
 
 ### Usage
 At the moment `gentoo_update` can only install GLSA and `@world` updates and store 
 the output to a dedicated directory. It resides in [GURU](https://wiki.gentoo.org/wiki/Project:GURU) 
 overlay in [app-admin/gentoo_update](https://github.com/gentoo/guru/tree/master/app-admin/gentoo_update).  
 
-After enabling GURU overlay it can be installed via:
+After [enabling GURU overlay](https://wiki.gentoo.org/wiki/Project:GURU/Information_for_End_Users) 
+it can be installed via:
 ```bash
 emerge --ask app-admin/gentoo_update
 ```
 
-Here are some use cases:
-**Security update**
+&nbsp; 
+
+Here are some use cases:  
+**Security update**  
+Running command without specifying `--update-mode` will use `glsa-check` to install security patches.
 ```bash
 gentoo-update
 ```
 
-**@world update**
+&nbsp; 
+
+**@world update**  
 Run full system update, merge all new configuration files, restart all services that were 
 updated and display elogs.
 ```bash
@@ -84,8 +92,8 @@ gentoo-update --update-mode full --config-update-mode merge --daemon-restart y -
 
 update with `--keep-going` flag.
 ```
-gentoo-update --update-mode full --args  "keep-going=y"
+gentoo-update --update-mode full --args "keep-going=y"
 ```
 
-After an udpate a log file will be created in `/var/log/portage/gentoo_udpate/log_<timestamp>`.
+After an update a log file will be created in `/var/log/portage/gentoo_update/log_<timestamp>`.  
 
