@@ -14,7 +14,7 @@ This article is a summary of all the changes made on
 project during **week 3** of GSoC.  
 
 Project is hosted on [Github](https://github.com/Lab-Brat/gentoo_update), 
-blog post can be alson found on 
+blog post can be also found on 
 [Gentoo Blogs](https://blogs.gentoo.org/gsoc/2023/06/17/week-3-report-automated-gentoo-system-updater/)  
 
 
