@@ -1,5 +1,5 @@
 ---
-title: "GSoC 2023: Week 4 [Friday Update]"
+title: "GSoC 2023: Week 4"
 date: 2023-06-23T22:57:16+03:00
 tags:
     - opensource
@@ -26,21 +26,25 @@ which I did by submitting 2 more commits (
 and 
 [commit2](https://github.com/gentoo/guru/commit/ee6e79850b9189da680fbfdc091ab355574f9180)).  
 
-Then I proceeded to write an introductory blog post. It can currently be read on my 
-[personal blog](https://labbrat.net/blog/gsoc2023/gentoo_update_intro/) and in 
-[Gentoo GSoC blog](). 
-I've delayed posting about it on forums yet because I'm waiting for the newest ebuild version to 
-be available in the main branch in GURU overlay (and because I'm a bit anxious to be honest).  
+Then I proceeded to write an introductory blog post. It can currently be read in 
+[Gentoo GSoC blog](https://blogs.gentoo.org/gsoc/2023/06/25/gentoo_update-introduction/). 
+I've delayed posting about it on forums because I was waiting for the newest ebuild version to 
+be merged to the main branch in GURU overlay (and because I was a bit anxious to be honest 😰). 
+But in the end I decided to stop waiting, and just mentioned in the blog post that `gentoo_update` 
+can be also installed via pip.  
+Forum post can be found 
+[here](https://forums.gentoo.org/viewtopic-p-8793590.html#8793590).  
 
-Updater also received some improvements overall. I found errors in `--args` flag (used to pass custom 
-parameters to emerge), it was not reading all parameters correctly. To fix the problem I changed the input 
-type, now it receives a string of space separated parameters instead of a list, for example 
-`"quiet-build=y color=y"`, and the problem was fixed. 
-Also the packaging with Python's setuptools was improved, now there not warnings during wheel building.  
+Updater also received some improvements overall. I found errors in `--args` flag (used for passing custom 
+parameters to `emerge`), in some cases it was not reading all parameters correctly. To fix the problem I 
+changed the input type, now it receives a string of space separated parameters instead of a list, 
+for example `"quiet-build=y color=y"`, and the problem was fixed.  
+
+Also the packaging with Python's setuptools was improved, now there are no warnings during wheel building.  
 
 Finally, I started working on the parser. Right now it can only split the output to different categories.  
 
-Overall, the week was not a very productive one, but many bugs and imperfections were discovered and fixed, 
+Overall, the week was not a very productive one, but many bugs and imperfections were discovered and fixed 
 which is great because I can now focus on the parser!  
 
 
@@ -65,4 +69,11 @@ packages, which was a problem because `update.sh` is a Bash script, and `tests` 
 compose file used for tests, and both of them were not meant to be a package. I found a solution in Gentoo's 
 [Python Guide](https://projects.gentoo.org/python/guide/qawarn.html#stray-top-level-files-in-site-packages) 
 which suggested a proper way to exclude the packages to avoid issues with Portage.  
+
+
+### Plans for Week 5
+Mostly I plan to work on the parser the whole week. Here is the checklist from last week:
+- [x] Split log into multiple sections, i.e updated programs, what needs restarting etc.
+- [ ] Summarize sections and create a report
+- [ ] If updater exits with error, crate a separate error report    
 
