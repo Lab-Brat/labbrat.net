@@ -1,5 +1,5 @@
 ---
-title: "GSoC 2023: Week 5 [Wednesday Update]"
+title: "GSoC 2023: Week 5"
 date: 2023-06-29T21:55:14+03:00
 tags:
     - opensource
