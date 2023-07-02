@@ -13,7 +13,9 @@ This article is a summary of all the changes made on
 [Automated Gentoo System Updater](https://wiki.gentoo.org/wiki/Google_Summer_of_Code/2023/Ideas/Automated_Gentoo_system_updater) 
 project during **week 4** of GSoC.  
 
-Project is hosted on [Github](https://github.com/Lab-Brat/gentoo_update).  
+Project is hosted on [Github](https://github.com/Lab-Brat/gentoo_update), 
+blog post can be also found on 
+[Gentoo Blogs](https://blogs.gentoo.org/gsoc/2023/06/17/week-3-report-automated-gentoo-system-updater/).    
 
 
 ### Progress on Week 4
