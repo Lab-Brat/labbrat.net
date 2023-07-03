@@ -11,7 +11,7 @@ ShowToc: true
 
 This article is a summary of all the changes made on 
 [Automated Gentoo System Updater](https://wiki.gentoo.org/wiki/Google_Summer_of_Code/2023/Ideas/Automated_Gentoo_system_updater) 
-project during **week 4** of GSoC.  
+project during **week 5** of GSoC.  
 
 Project is hosted on [GitHub](https://github.com/Lab-Brat/gentoo_update), 
 blog post can be also found on 
@@ -51,9 +51,10 @@ Parsed has turned out to be much harder than I anticipated. First of all, I had 
 to both Python and Bash code to create simpler log output (reduce number of if/else statements), and 
 secondly there were some motivation issues.  
 
-It was a bit hard to focus on the parser, because a much better approach is to add machine readable 
-output from Portage instead of parsing log. I talked to my mentor about it and we decided to continue 
-working on the parser, mainly because modifying Portage in any significant way take waay too much time.  
+Secondly, there were some motivation issues. It was a bit hard to focus on the parser, because a much 
+better approach is to add machine readable output from Portage instead of parsing logs. I talked to my 
+mentor about it and we decided to continue working on the parser, mainly because modifying Portage in 
+any significant way take waay too much time.  
 
 
 ### Plans for Week 6
