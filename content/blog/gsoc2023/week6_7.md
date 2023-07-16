@@ -15,7 +15,7 @@ project during **weeks 6 and 7** of GSoC.
 
 Project is hosted on [GitHub](https://github.com/Lab-Brat/gentoo_update), 
 blog post can be also found on 
-[Gentoo Blogs]().    
+[Gentoo Blogs](https://blogs.gentoo.org/gsoc/2023/07/16/week-67-report-automated-gentoo-system-updater/).    
 
 
 ### Progress on Weeks 6 + 7
