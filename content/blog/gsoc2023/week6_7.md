@@ -44,8 +44,7 @@ And here are the errors that I plan to add support for in the future:
 
 I also had a good idea about how to go about testing `gentoo_update`. 
 Basically, I can set up a CI/CD pipeline that will detect newly published 
-stage3 Docker containers, and whenever there a new container is detected 
-- run `gentoo_update` on it and check the output. Eventually, it will run 
+stage3 Docker containers, and whenever there a new container is detected run `gentoo_update` on it and check the output. Eventually, it will run 
 into some errors that I will then use to improve `gentoo_update`. Pipeline itself can be set up with Jenkins, for example. This idea is a bit out of 
 scope of my proposal, so I will work on it after GSoC :)  
 
