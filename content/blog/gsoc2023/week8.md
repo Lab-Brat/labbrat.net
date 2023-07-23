@@ -1,5 +1,5 @@
 ---
-title: "GSoC 2023: Weeks 8"
+title: "GSoC 2023: Week 8"
 date: 2023-07-22T14:43:37+03:00
 tags:
     - opensource
@@ -15,10 +15,10 @@ project during **week 8** of GSoC.
 
 Project is hosted on [GitHub](https://github.com/Lab-Brat/gentoo_update), 
 blog post can be also found on 
-[Gentoo Blogs]().    
+[Gentoo Blogs](https://blogs.gentoo.org/gsoc/2023/07/23/week-8-report-automated-gentoo-system-updater/).    
 
 
-### Progress on Weeks 8
+### Progress on Week 8
 Currently, the updater supports two methods of notifications: IRC bot and email.
 
 The IRC bot was built using Python's sockets library with SSL support. 
