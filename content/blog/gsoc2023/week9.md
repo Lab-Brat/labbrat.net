@@ -19,12 +19,12 @@ blog post can be also found on
 
 
 ### Progress on Week 9
-This week, much of my time was devoted to improving my Dart and Flutter skills, 
+This week, much of my time was devoted to improving Dart and Flutter skills, 
 preparing to develop the mobile app and researching app architecture.  
 
-I have mode some `gentoo_update` code improvements as well:
+I have made some `gentoo_update` code improvements as well:
 * Parse update log into dataclass instead of a dictionary.
-* Remove `y/n` option for CLI flags, now it the flag is present it automatically means `y`
+* Remove `y/n` option for CLI flags, now if the flag is present it automatically means `y`
 * Read multiple mount point disk usage stats, instead of just /
 * Simplify package info parsing by replacing complex regular expressions with string splitting
 
