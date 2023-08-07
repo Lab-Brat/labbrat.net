@@ -21,23 +21,21 @@ blog post can be also found on
 
 
 ### Progress on Week 10
-I have finalized app architecture, here are the details:
+I have finalized app architecture, here are the details:  
 
-The app is designed to handle push notifications. For each user, it will create a 
-unique API token. This token will be given to `gentoo_update`, which will then use 
-it to encrypt the report. The encrypted report will be sent to the mobile device 
-using a push server endpoint, and the token will verify its receipt. Update reports 
+The app's main functionality is to receive notification from the push server. 
+For each user, it will create a unique API token after authentication 
+(there is an Anonymous option). This token will be used by gentoo_update to send 
+the encrypted report to the mobile device using a push server endpoint. Update reports 
 will be kept only on the mobile device, ensuring privacy.  
 
-After much discussion, I decided to implement app's backend in Firebase. Since 
-GSoC is run by Google, it seems appropriate to use their products for this project. 
-However, future plans include the possibility of implementing a self-hosted backend 
-option, such as with [Supabase](https://supabase.com) or [Appwrite](https://appwrite.io), 
-or simply a web server capable of delivering messages between the Gentoo installation 
-and the mobile app.  
+After much discussion, I decided to implement app’s backend in Firebase. Since GSoC 
+is organized by Google, it seems appropriate to use their products for this project. 
+However, future plans include the possibility of implementing a self-hosted web server, 
+so that instead of authentication user will just enter server public IP and port.  
 
 Example usage will be something like:
-1. Download the app and sign-in (there is an Anonymous option).
+1. Download the app and sign-in.
 2. App will generate a token, 1 token per 1 account.
 3. Save the token into an environmental variable on Gentoo Linux.
 4. Run `gentoo_update --send-report mobile`
@@ -61,10 +59,7 @@ so far:
 I'm finding it somewhat challenging to master the use of Flutter and design an 
 modern-looking app. My comfort zone lies more in coding backend and automation tasks 
 rather than focusing on the intricacies of UI components. Despite these challenges, 
-I'm committed to learning and improving my skills in front-end development. Through 
-experimentation with different design elements and persistence in my efforts, I believe 
-I'll be able to overcome these obstacles and create an effective and visually appealing 
-user interface for the app.  
+I am 60% sure that in end app will look half-decent.  
 
 ### Plans for Week 11
 After week 11 I plan to have a mechanism to deliver update reports from a 
