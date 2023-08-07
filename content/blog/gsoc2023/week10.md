@@ -58,7 +58,13 @@ so far:
 * UI elements for everything above
 
 ### Challenges
-
+I'm finding it somewhat challenging to master the use of Flutter and design an 
+modern-looking app. My comfort zone lies more in coding backend and automation tasks 
+rather than focusing on the intricacies of UI components. Despite these challenges, 
+I'm committed to learning and improving my skills in front-end development. Through 
+experimentation with different design elements and persistence in my efforts, I believe 
+I'll be able to overcome these obstacles and create an effective and visually appealing 
+user interface for the app.  
 
 ### Plans for Week 11
 After week 11 I plan to have a mechanism to deliver update reports from a 
