@@ -15,7 +15,7 @@ project during **week 9** of GSoC.
 
 Project is hosted on [GitHub](https://github.com/Lab-Brat/gentoo_update), 
 blog post can be also found on 
-[Gentoo Blogs]()
+[Gentoo Blogs](https://blogs.gentoo.org/gsoc/2023/08/07/week-910-report-automated-gentoo-system-updater/)
 
 
 ### Progress on Week 9
@@ -41,8 +41,8 @@ backend database. However, this approach has several significant limitations:
 2. Security: To receive notifications from anywhere, users would need to open a port on their mobile device publicly, reducing the device's security.
 3. Complexity: Users might choose to deploy a proxy server or an edge function to handle the notification delivery, but this could be a complex procedure.  
 
-Given the aforementioned limitations, establishing a backend might actually be 
-a beneficial approach. This could be done securely without storing any information, 
+Given the aforementioned limitations, implementing a backend might actually be 
+a correct approach. This could be done securely without storing any information, 
 if its sole use is for notification delivery.  
 
 During user authentication in the app (which unfortunately is unavoidable), the backend 

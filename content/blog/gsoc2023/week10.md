@@ -17,7 +17,7 @@ Project is hosted on GitHub (
 [gentoo_update](https://github.com/Lab-Brat/gentoo_update) and 
 [mobile app](https://github.com/Lab-Brat/gentoo_update_flutter)), 
 blog post can be also found on 
-[Gentoo Blogs]().
+[Gentoo Blogs](https://blogs.gentoo.org/gsoc/2023/08/07/week-910-report-automated-gentoo-system-updater/).
 
 
 ### Progress on Week 10
