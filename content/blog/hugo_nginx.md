@@ -47,7 +47,7 @@ dnf install -y firewalld
 systemctl start --now firewalld
 firewall-cmd --add-service https
 firewall-cmd --add-service https --permanent
-```  
+```
 
 AlmaLinux's repository, just like most of the most popular Linux distributions, 
 doesn't have the latest Nginx version, 
@@ -63,8 +63,7 @@ name = nginx repo
 EOF
 
 dnf install -y nginx
-```  
-
+```
 
 ### Step 3: Installing Hugo
 Unfortunately, `hugo` is also not present in the AlmaLinux repository. 
@@ -92,11 +91,11 @@ echo "[Hugo binary unpacked and installed]"
 # Clean-up
 rm -rf hugo_latest*
 echo "[Residual files deleted]"
-```  
+```
 
 Script places `hugo` executable to `/usr/local/bin`, which should be in `$PATH` variable already. 
 To test if installation was successful, run:
-```
+```bash
 hugo --help
 ```
 
@@ -110,7 +109,7 @@ cd /opt
 hugo new site hugo_site
 cd hugo_site
 chown nginx:nginx public
-```  
+```
 
 Hugo supports a lot of [themes](https://themes.gohugo.io) and it might be hard to choose one. 
 Generally, it's best to choose a theme that is well maitaing (has recent commits in Github repo) 
@@ -151,7 +150,7 @@ server {
     }
 }
 EOF
-```  
+```
 
 After that, check if Nginx syntax is valid, and reload Nginx service:
 ```bash
@@ -208,7 +207,7 @@ chmod 600 /etc/ssl/cloudflare.pem
 After this step, all requests to the website that are not from Cloudflare will get 400 error.  
 
 Lastly, let's update Nginx's configuration file to use TLS encryption:
-```
+```bash
 # Nginx configuration file with TLS settings
 server {
     listen 80;
@@ -235,14 +234,14 @@ server {
         try_files $uri $uri/ =404;
     }
 }
-```  
+```
 
 Validate Nginix config syntax and reload the service if there are not mistakes
 ```bash
 # validate Nginx configs syntax and reload service
 nginx -t
 systemctl reload nginx
-```  
+```
 
 Enter website URL `https://domain_name.com` in the browser and check if the 
 website is working with TLS encryption. If it works a green lock icon should 
