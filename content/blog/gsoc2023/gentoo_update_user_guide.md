@@ -61,7 +61,8 @@ This log becomes the basis for the update report when the `--report` flag is use
 transforming the log details into a structured update report.  
 
 ### Send Report
-The update report can be sent through three distinct methods: IRC bot, email, or mobile app.
+The update report can be sent through three distinct methods: 
+IRC bot, email, or mobile app.
 
 **IRC Bot Method**  
 Begin by registering a user on an IRC server and setting a nickname as outlined in the 
@@ -95,16 +96,17 @@ Details on this method will be elaborated in the following section.
 
 ## gentoo_update Mobile App
 ### Installation
-Mobile app can either be installed from Github or Google Play Store.  
+Mobile app can either be installed from GitHub or Google Play Store.  
 
-**Note:** As of 2023.08.26, the app is only available for Android. 
-The app is also pending approval in the Google Play Store, which might take up to two weeks. Until it get approved, 
-see below for manual installation instruction.  
+**Play Store**  
+App can be found by searching `gentoo_update` in the Play Store, or by using 
+[this link](https://play.google.com/store/apps/details?id=net.labbrat.gentoo_update).
+
 
 **Manual Installation**  
 For manual installation on an Android device, download the APK file from  
 [Releases](https://github.com/Lab-Brat/gentoo_update_flutter/releases/tag/1.0.1) 
-tab on Github. Ensure you've enabled installation from 
+tab on GitHub. Ensure you've enabled installation from 
 [Unknown Sources](https://www.applivery.com/docs/mobile-app-distribution/android-unknown-sources/) 
 before proceeding.  
 
@@ -128,7 +130,7 @@ To log out, tap the Sign Out button.
 **Note:** Since only Anonymous Login is available, once logged out, 
 returning to the same account isn't possible.  
 
-![Gentoo Update Mobile App Screens](/img/gentoo_update_mb_screens.png/) 
+![Gentoo Update Mobile App Screens](/img/gentoo_update_mb_screens.jpg) 
 
 &nbsp; 
 
