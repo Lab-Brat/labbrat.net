@@ -39,13 +39,13 @@ Links:
 * Docker [tests](https://github.com/Lab-Brat/gentoo_update/blob/main/tests/compose.yaml)  
 
 ### [Week 2](https://labbrat.net/blog/gsoc2023/week2/)
-Packaged Python code, created an ebuild and a Github Actions workflow 
+Packaged Python code, created an ebuild and a GitHub Actions workflow 
 that publishes package to PyPI when commit is tagged.  
 
 Links:
 * Pull requests: [#5](https://github.com/Lab-Brat/gentoo_update/pull/5) 
-* Ebuild [commit](https://github.com/Lab-Brat/gentoo_update_ebuild)
-* Github Actions [workflow](https://github.com/Lab-Brat/gentoo_update/blob/main/.github/workflows/main.yml)  
+* ebuild [commit](https://github.com/Lab-Brat/gentoo_update_ebuild)
+* GitHub Actions [workflow](https://github.com/Lab-Brat/gentoo_update/blob/main/.github/workflows/main.yml)  
 
 ### [Week 3](https://blogs.gentoo.org/gsoc/2023/06/17/week-3-report-automated-gentoo-system-updater/)
 Fixed issue #7 and answered to issue #8 and fixed bug 908308. Added USE flags to 
@@ -67,7 +67,7 @@ Links:
 * Blog [post](https://blogs.gentoo.org/gsoc/2023/06/25/gentoo_update-introduction/) and Forum [post](https://forums.gentoo.org/viewtopic-p-8793590.html#8793590)
 
 ### [Week 5](https://blogs.gentoo.org/gsoc/2023/07/02/week-5-report-automated-gentoo-system-updater/)
-Received some feeback from forums. Coded much of the parser (`--report`). 
+Received some feedback from forums. Coded much of the parser (`--report`). 
 Improved container testing environment.
 
 Links:
@@ -127,7 +127,7 @@ Link:
 
 ### Final week
 Added token encryption with Cloud Functions.  
-Packaged mobile app with Github Actions and 
+Packaged mobile app with GitHub Actions and 
 published to Google Play Store (2023-08-27 app review is still ongoing).  
 
 Recorded a demo video and 
@@ -136,7 +136,7 @@ wrote gentoo_update User Guide that covers both CLI and mobile app.
 Links:
 * Demo [video](https://youtu.be/go6SJZBgpgg?si=bgC2xLA22_aeikOE)
 * [gentoo_update User Guide](https://blogs.gentoo.org/gsoc/2023/08/27/gentoo_update-user-guide/)
-* Packaging Github Actions [workflow](https://github.com/Lab-Brat/gentoo_update_flutter/blob/main/.github/workflows/main.yml)
+* Packaging GitHub Actions [workflow](https://github.com/Lab-Brat/gentoo_update_flutter/blob/main/.github/workflows/main.yml)
 * Release [page](https://github.com/Lab-Brat/gentoo_update_flutter/releases)
 
 
@@ -160,7 +160,7 @@ Full feature lists can be found in readme's of both repositories:
 * mobile app upcoming [features](https://github.com/Lab-Brat/gentoo_update_flutter)
 
 ## Final Thoughts
-These 12 weeks felt like a hackthon, where I had to learn new technologies very 
+These 12 weeks felt like a hackathon, where I had to learn new technologies very 
 quickly and create something that works very fast. I faced many challenges and 
 acquired a range of new skills.  
 
@@ -168,7 +168,7 @@ Over the course of this project, I coded both Linux CLI applications using Pytho
 and mobile apps with Flutter and Firebase. 
 To maintain the quality of my work, I tested the code in Docker containers, virtual machines 
 and physical hardware. 
-Additionally, I built and deployed CI/CD pipelines with Github Actions to automate packaging. 
+Additionally, I built and deployed CI/CD pipelines with GitHub Actions to automate packaging. 
 Beyond the technical side, I engaged actively with Gentoo community, 
 utilizing IRC chats and forums. Through these platforms, I addressed and resolved issues on 
 both GitHub and Gentoo Bugs, enriching my understanding and refining my skills.
@@ -176,7 +176,7 @@ both GitHub and Gentoo Bugs, enriching my understanding and refining my skills.
 I also would like to thank my mentor, Andrey Falko, for all his help and support. 
 I wouldn't have been able to finish this project without his guidance.  
 
-In addition, I want to thank Goodle for providing such a generous opportunity for 
+In addition, I want to thank Google for providing such a generous opportunity for 
 open source developers to work on bringing forth innovation.   
 
 Lastly, I am grateful to Gentoo community for the feedback that's helped me to 
