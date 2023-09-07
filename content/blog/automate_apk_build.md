@@ -75,20 +75,17 @@ and write it to files in the build environment:
       - name: 🔑 Create Google Services JSON File
         env:
           GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
-        run: |
-          echo $GOOGLE_SERVICES_JSON | base64 -di > ./android/app/google-services.json
+        run: echo $GOOGLE_SERVICES_JSON | base64 -di > ./android/app/google-services.json
 
       - name: 🔑 Create the Keystore
         env:
           KEYSTORE_BASE64: ${{ secrets.KEYSTORE }}
-        run: |
-          echo $KEYSTORE_BASE64 | base64 -di > android/upload-keystore.jks 
+        run: echo $KEYSTORE_BASE64 | base64 -di > android/upload-keystore.jks 
 
       - name: 🔑 Create Key Properties
         env:
           KEY_PROPERTIES_BASE64: ${{ secrets.KEY_PROPERTIES }}
-        run: |
-          echo $KEY_PROPERTIES_BASE64 | base64 -di > android/key.properties 
+        run: echo $KEY_PROPERTIES_BASE64 | base64 -di > android/key.properties 
 ```
 
 Update the dependency list and build APK file and an App Bundle:
