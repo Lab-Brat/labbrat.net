@@ -20,12 +20,13 @@ from which I have learned [alot](https://hyperboleandahalf.blogspot.com/2010/04/
 #### Tools
 - [[Link](https://www.digitalocean.com/community/tools/nginx)] - NGINXConfig 
 - [[Link](https://pre-commit.com/)] - Advanced managing of pre-commit hooks 
-
-#### Misc
-- [[Link](https://blog.samaltman.com/how-to-be-successful)] - How to be successful by Sam Altman
-- [[Link](https://www.corporate-rebels.com/blog/feedback-at-netflix)] - Feedback at Netflix
+- [[Link](https://github.com/GoogleContainerTools/distroless)] - Distroless containers which are ridiculously small
 
 #### Tech
 - [[Link](https://system76.com/desktops/thelio-mega)] - PC from dreams
 - [[Link](https://frame.work/)] - Framework laptops
 - [[Link](https://teenage.engineering/products)] - Audio stuff
+
+#### Misc
+- [[Link](https://blog.samaltman.com/how-to-be-successful)] - How to be successful by Sam Altman
+- [[Link](https://www.corporate-rebels.com/blog/feedback-at-netflix)] - Feedback at Netflix
