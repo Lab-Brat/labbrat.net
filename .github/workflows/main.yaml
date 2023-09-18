@@ -14,5 +14,5 @@ jobs:
       run: sudo hugo -s /opt/website/
 
     - name: Reload Nginx
-      run: sudo docker exec -it nginx nginx -s reload
+      run: sudo docker exec nginx nginx -s reload
 
