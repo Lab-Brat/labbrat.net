@@ -1,0 +1,17 @@
+name: hugo
+on: [push]
+jobs:
+
+  generate:
+    name: Generate static content
+    runs-on: self-hosted
+    steps:
+
+    - name: Pull latest changes
+      run: cd /opt/website && sudo git pull
+
+    - name: Run Hugo
+      run: sudo hugo -s /opt/website/
+
+    - name: Reload Nginx
+      run: sudo docker restart nginx
