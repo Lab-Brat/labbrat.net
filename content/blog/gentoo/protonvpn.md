@@ -48,3 +48,7 @@ Everything else is pretty much the same. To connect just run:
 ```bash
 protonvpn c
 ```
+
+### Links
+* [[Link](https://github.com/Rafficer/linux-cli-community/blob/master/USAGE.md)] - Community CLI user guide
+- [[Link](https://protonvpn.com/support/official-linux-client)] - Official tool
