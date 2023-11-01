@@ -13,6 +13,7 @@ from which I have learned [alot](https://hyperboleandahalf.blogspot.com/2010/04/
 #### Infrastructure
 - [[Link](https://openai.com/research/infrastructure-for-deep-learning)] - Building Infrastructure for AI company
 - [[Link](https://www.levels.fyi/blog/scaling-to-millions-with-google-sheets.html)] - Scaling Google Sheets as a backend
+- [[Link](https://world.hey.com/dhh/we-have-left-the-cloud-251760fb)] - We have left the cloud
 
 #### Git
 - [[Link](https://nvie.com/posts/a-successful-git-branching-model/)] - Git Branching Model 
