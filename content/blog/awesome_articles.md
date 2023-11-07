@@ -15,6 +15,7 @@ from which I have learned [alot](https://hyperboleandahalf.blogspot.com/2010/04/
 - [[Link](https://www.levels.fyi/blog/scaling-to-millions-with-google-sheets.html)] - Scaling Google Sheets as a backend
 - [[Link](https://world.hey.com/dhh/we-have-left-the-cloud-251760fb)] - We have left the cloud
 - [[Link](https://sre.google/resources/practices-and-processes/twenty-years-of-sre-lessons-learned/)] - Lessons Learned from Twenty Years of Site Reliability Engineering
+- [[Link](https://prometheus.io/blog/2016/07/23/pull-does-not-scale-or-does-it/)] - Scaling pull-based monitoring system
 
 #### Git
 - [[Link](https://nvie.com/posts/a-successful-git-branching-model/)] - Git Branching Model 
