@@ -148,5 +148,5 @@ eclean-kernel -n 1
   * [ [Link](https://serverfault.com/questions/9936/optimal-procedure-to-upgrade-gentoo-linux) ] Optimal procedure to upgrade Gentoo Linux?
 * Github
   * [ [Link] ](https://github.com/sakaki-/genup) genup
-  * [ [Link] ](https://github.com/alicela1n/gentoo-update) gentoo-update
+  * [ [Link] ](https://github.com/Lab-Brat/gentoo_update) gentoo_update
  
