@@ -1,7 +1,6 @@
 ---
-title: "Monitoring_best_practices"
+title: "Monitoring Best Practices"
 date: 2023-11-14T23:03:30+03:00
-draft: true
 tags:
     - monitoring
 categories:
@@ -12,15 +11,16 @@ ShowToc: true
 ## Introduction
 This article is a summary of monitoring best practices as outlined in the book 
 ["Practical Monitoring"](https://www.oreilly.com/library/view/practical-monitoring/9781491957349/) 
-by Mike Julian. I did not add  my original thoughts on monitoring, it's just 
-a simple summary of core concepts from first 3 chapters. The whole book is 
-tool-agnostic and focuses on common themes that occur in different kinds of 
-monitoring systems, so the article will not be mentioning any specific tools.  
+by Mike Julian. I did not add  my thoughts and experience to it, it's just 
+a simple summary of core concepts from first 3 chapters of the book. 
+The whole book is tool-agnostic and focuses on common themes that occur in 
+different kinds of monitoring systems, so the article also tries to follow this concept.
 
 
 ## Monitoring Anti-Patterns
 Before jumping to design patterns it's important to understand what should be 
-avoided.
+avoided. Listed below are some common anti-patterns that decrease quality and 
+reliability of many monitoring systems.
 
 ### Tool Obsession
 There is no perfect tool that will magically solve all issues with monitoring, 
@@ -35,29 +35,27 @@ and implement it.
 
 Don't incorporate tools just because other successful teams use it. Tools 
 essentially are a result of a particular work style, which might not be 
-suited for your current situation. That is also why sometimes it is neccessary 
-to create custom tools, but only when it's a small specialzed tool, 
+suited for your current situation. That is also why sometimes it is necessary 
+to create custom tools, but only when it's a small specialized tool, 
 and not a whole monitoring platform from scratch.  
 
 ### Checkbox Monitoring
-```
-Checkbox monitoring is when you have monitoring systems for the sole sake
-of saying you have them.
-```
-Checkbox monitoring is usually caused by misunderstanding what should be monitored. 
-This is understandable, because responsibility on monitoring lays on every person 
+> Checkbox monitoring is when you have monitoring systems for the sole sake of saying you have them.
+
+This is usually caused by misunderstanding what should be monitored. 
+It's understandable, because responsibility on monitoring lays on every person 
 in the organization. Simply put, one person could not possibly know how to monitor 
 everything - networking gear, services, databases etc.  
 
 It's OK to have a team be responsible for the monitoring platform generally, 
-but creating alerts and using custom tools should be everyones responsibility.  
+but creating alerts and using custom tools should be everyone's responsibility.  
 
 Here are some things that can be done to better understand what should be monitored:
-- Understand what "working" actually means: Establishing high-level checks, such as an HTTP GET / for a webapp, provides valuable insights into its functionality, including response codes, expected content, and request latency. While these checks may not pinpoint specific problems, they serve as effective early indicators.
+- Understand what "working" actually means: Establishing high-level checks, such as an HTTP GET / for a web app, provides valuable insights into its functionality, including response codes, expected content, and request latency. While these checks may not pinpoint specific problems, they serve as effective early indicators.
 - OS metrics are not very useful for alerting. Alerts like 80% of CPU load are not actually a problem if the service is continuing to function properly.
 - Collect metrics more often: some metrics can be collected once in 30-60 seconds (most modern networking devices can easily handle this kind of load).
 
-### Misc
+### Lack of Automation
 It is important to remember that monitoring is not a solution to a problem, but 
 a way to detect problem when they happen. Is a service is poorly written and breaks 
 often there is no point in adding additional alerts to it, the only solution is 
@@ -65,7 +63,7 @@ to fix the service itself.
 
 Finally, monitoring should be 100% automated. That means services and alerts should 
 be self registered, as opposed to someone manually adding them. If this process is 
-made as easy as possibly, it will be more enganging and will encourage people to add 
+made as easy as possibly, it will be more engaging and will encourage people to add 
 more checks to their services.  
 
 
@@ -95,7 +93,7 @@ monitored very well.
 
 ### Continual Improvement
 Monitoring system is a complex project that quickly evolves and requires constant 
-maintanence. Be patient, always look for improvements, get feedback from users and 
+maintenance. Be patient, always look for improvements, get feedback from users and 
 optimize it.  
 
 
@@ -108,7 +106,7 @@ chats or filed as an auto-generated ticket (or even resolved automatically).
 ### What Makes a Good Alert
 Here are some qualities that make up a good alert:
 - Deliver it with appropriate tools: Pager if it's an alert, chatroom if it's a message.
-- Write runbooks: Link to documentation about a particular issue which can be embedded into the alert describtion.
+- Write runbooks: Link to documentation about a particular issue which can be embedded into the alert description.
 - Be flexible in alert triggers: Arbitrary static thresholds are not always a best option for triggering alert, in some cases percentage is better (like in disk usage).
 - Delete and tune alerts: If alert is not causing an immediate action - tune or delete it.
 - Attempt self-healing: Some tasks can be automated. In this case alert should be sent only if automation failed to fix the issue.
@@ -116,11 +114,11 @@ Here are some qualities that make up a good alert:
 ### Runbooks
 Runbooks helps on-call engineer to quickly understand the context of an alert, and 
 improve the resolution speed. It is usually not a list of commands for copy-pasting, 
-becuase in that case it could just be automated via self-healing, but rather is a 
+because in that case it could just be automated via self-healing, but rather is a 
 context and extra information for the alert to assist in forming a human judgement.  
 
 A runbook should be able to answer following questions about a service:
-- What is the servie and what is its functionality?
+- What is the service and what is its functionality?
 - Who/What team is responsible for it?
 - Does it have dependencies?
 - What infrastructure it uses?
@@ -129,23 +127,23 @@ A runbook should be able to answer following questions about a service:
 
 Information about the runbook can be provided via a link to documentation service 
 that is attached to the alert description. This way, on-call engineer can just 
-follow the link and save a lot of time debuggin the issue.  
+follow the link and save a lot of time debugging the issue.  
 
 
 ## Conclusion
 This article described some general concepts that make a up a good monitoring system 
-without dwelving into particular tools. Some anti-patterns were covered, as well as 
+without dwelling into particular tools. Some anti-patterns were covered, as well as 
 good practices. To summarize:
 - Composable monitoring architecture is more efficient
 - Monitor things by thinking from user's perspective
 - Keep improving and gather feedback
 - There is no silver bullet when it comes to tools
-- Monitoring is everyones responsibility
+- Monitoring is everyone's responsibility
 - Think carefully if something actually needs to monitored
 - Monitoring does not fix bad code
-- Automate everying to improve usability and ensure consistenct
+- Automate everything to improve usability and ensure consistent
 
 We also covered some basics in alerting, since it is an integral part of any 
 monitoring system. In a nutshell, every alert has to be carefully though out 
-to reduce noize, and should provide essential information via runbooks for 
+to reduce noise, and should provide essential information via runbooks for 
 the on-call engineers to have a context about the issue.  
