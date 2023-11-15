@@ -130,3 +130,22 @@ A runbook should be able to answer following questions about a service:
 Information about the runbook can be provided via a link to documentation service 
 that is attached to the alert description. This way, on-call engineer can just 
 follow the link and save a lot of time debuggin the issue.  
+
+
+## Conclusion
+This article described some general concepts that make a up a good monitoring system 
+without dwelving into particular tools. Some anti-patterns were covered, as well as 
+good practices. To summarize:
+- Composable monitoring architecture is more efficient
+- Monitor things by thinking from user's perspective
+- Keep improving and gather feedback
+- There is no silver bullet when it comes to tools
+- Monitoring is everyones responsibility
+- Think carefully if something actually needs to monitored
+- Monitoring does not fix bad code
+- Automate everying to improve usability and ensure consistenct
+
+We also covered some basics in alerting, since it is an integral part of any 
+monitoring system. In a nutshell, every alert has to be carefully though out 
+to reduce noize, and should provide essential information via runbooks for 
+the on-call engineers to have a context about the issue.  
