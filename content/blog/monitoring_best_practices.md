@@ -93,7 +93,6 @@ if the service is available and works. So the first order of business when confi
 monitoring is to make sure that HTTP status codes, request latency and time are being 
 monitored very well.  
 
-
 ### Continual Improvement
 Monitoring system is a complex project that quickly evolves and requires constant 
 maintanence. Be patient, always look for improvements, get feedback from users and 
@@ -101,8 +100,33 @@ optimize it.
 
 
 ## Tips on Alerting
+Alert is supposed to cause an immediate reaction from the on-call engineer. 
+If immediate reaction is not required, then it's a message. Message might cause an 
+alert in future if it is not handled in-time, so it still has be sent out to internal 
+chats or filed as an auto-generated ticket (or even resolved automatically).  
 
-## Reading List
-Visualization:
-- The Visual Display of Quantitative Information by Edward Tuft [[Link](https://www.amazon.com/Visual-Display-Quantitative-Information/dp/1930824130)]
-- Learn Grafana 7.0 by Eric Salituro [[Link](https://www.oreilly.com/library/view/learn-grafana-70/9781838826581/)]
+### What Makes a Good Alert
+Here are some qualities that make up a good alert:
+- Deliver it with appropriate tools: Pager if it's an alert, chatroom if it's a message.
+- Write runbooks: Link to documentation about a particular issue which can be embedded into the alert describtion.
+- Be flexible in alert triggers: Arbitrary static thresholds are not always a best option for triggering alert, in some cases percentage is better (like in disk usage).
+- Delete and tune alerts: If alert is not causing an immediate action - tune or delete it.
+- Attempt self-healing: Some tasks can be automated. In this case alert should be sent only if automation failed to fix the issue.
+
+### Runbooks
+Runbooks helps on-call engineer to quickly understand the context of an alert, and 
+improve the resolution speed. It is usually not a list of commands for copy-pasting, 
+becuase in that case it could just be automated via self-healing, but rather is a 
+context and extra information for the alert to assist in forming a human judgement.  
+
+A runbook should be able to answer following questions about a service:
+- What is the servie and what is its functionality?
+- Who/What team is responsible for it?
+- Does it have dependencies?
+- What infrastructure it uses?
+- Where are its logs?
+- What alerts are set up for it and why?
+
+Information about the runbook can be provided via a link to documentation service 
+that is attached to the alert description. This way, on-call engineer can just 
+follow the link and save a lot of time debuggin the issue.  
