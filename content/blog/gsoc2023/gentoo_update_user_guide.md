@@ -15,6 +15,9 @@ tool and the mobile app.
 
 But before that, here is a demo of this project: {{< youtube go6SJZBgpgg >}}
 
+> ⚠️ CLI was rewritten in version 0.2.2 and the video is slightly outdated  
+> Commands in this article were updated to the new CLI standard  
+> Video will be updated soon 😼
 &nbsp; 
 
 ## gentoo_update CLI App
@@ -25,7 +28,14 @@ but PyPI will always have the most recent version.
 
 Enable GURU and install with emerge:
 ```bash
+# enable the repository and sync package tree
 eselect repository enable guru
+emerge --sync
+
+# unmask package, since all packages in GURU are considered unstable
+echo 'app-admin/gentoo_update ~amd64' > /etc/portage/package.accept_keywords/gentoo_update
+
+# install
 emerge --ask app-admin/gentoo_update
 ```
 
@@ -43,12 +53,12 @@ is found.
 
 By default, when run without flags security mode is selected:
 ```bash
-gentoo-update
+gentoo-update update
 ```
 
 To update @world, run:
 ```bash
-gentoo-update --update-mode full
+gentoo-update update --update-mode full
 ```
 
 Full list of available parameters and flags can be accessed with the `--help` flag. 
@@ -57,7 +67,7 @@ Further examples are detailed in the repository's
 
 Once the update concludes, a log file gets generated at 
 `/var/log/portage/gentoo_update/log_<date>` (or whatever $PORTAGE_LOGDIR is set to). 
-This log becomes the basis for the update report when the `--report` flag is used, 
+This log becomes the basis for the update report when the `report` subcommand is used, 
 transforming the log details into a structured update report.  
 
 ### Send Report
@@ -73,7 +83,7 @@ define the necessary environmental variables and execute the following commands:
 export IRC_CHANNEL="#<irc_channel_name>"
 export IRC_BOT_NICKNAME="<bot_name>"
 export IRC_BOT_PASSWORD="<bot_password>"
-gentoo-update --send-report irc
+gentoo-update report --send-report irc
 ```
 
 **Email via Sendgrid**  
@@ -86,7 +96,7 @@ emerge --ask dev-python/sendgrid
 export SENDGRID_TO='recipient@email.com'
 export SENDGRID_FROM='sender@email.com'
 export SENDGRID_API_KEY='SG.****************'
-gentoo-update --send-report email
+gentoo-update report --send-report email
 ```
 
 Notifications can also be sent via the mobile app. 
@@ -147,4 +157,4 @@ IRC. I am in most of the #gentoo IRC groups and my nick is #LabBrat.
 
 ## Links
 - [[Link](https://github.com/Lab-Brat/gentoo_update)] - gentoo_update CLI repository
-* [[Link](https://github.com/Lab-Brat/gentoo_update_flutter)] - Mobile App repository
+- [[Link](https://github.com/Lab-Brat/gentoo_update_flutter)] - Mobile App repository
