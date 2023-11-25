@@ -14,7 +14,7 @@ My life in many sentences &darr;&darr;
     * Support (tech and emotional)
     * Python programming.
 
->>> I was born in China, where I lived and studied for 25 years. 
+>>> I was born in China, where I lived and studied for 24 years. 
     Now I am all over the place.
 
 >>> I like to play chess and cook+eat food in my free time,
