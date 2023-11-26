@@ -8,11 +8,10 @@ jobs:
     steps:
 
     - name: Pull latest changes
-      run: cd /opt/website && sudo git pull
+      run: cd /opt/labbrat.net && sudo git pull
 
     - name: Run Hugo
-      run: sudo hugo -s /opt/website/
+      run: sudo hugo -s /opt/labbrat.net
 
     - name: Reload Nginx
       run: sudo docker exec nginx nginx -s reload
-
