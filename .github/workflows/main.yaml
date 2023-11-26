@@ -11,7 +11,7 @@ jobs:
       run: cd /opt/labbrat.net && sudo git pull
 
     - name: Run Hugo
-      run: sudo hugo -s /opt/labbrat.net
+      run: sudo /usr/local/bin/hugo -s /opt/labbrat.net
 
     - name: Reload Nginx
       run: sudo docker exec nginx nginx -s reload
