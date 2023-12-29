@@ -28,7 +28,7 @@ It's for you if:
 * You want to contribute to open source projects.
 * You want to lean how to communicate with open source communities.
 * You want a pretty thing on your resume.
-* You want to network with young ambitious tech people.
+* You want to network with fellow tech people.
 
 It's not for you if:
 * You want to get paid well.
@@ -49,10 +49,9 @@ so I decided to apply!
 ### How to choose an organization?
 It's actually very simple - **don't try to be someone you are not!**  
 
-I work with Linux on my job everyday and use Arch [btw] on my personal laptop. 
-Sometimes, there are no other topics that I want to talk about except 
-distro wars or whether `systemd` is aligned with opensource philosophy 
-(it totally doesn't).  
+I work with Linux on my job everyday and use Gentoo on my personal laptop. 
+Honestly I think it's the best thing that came out of computer science field 
+thus far, and could talk about it for days.
 ![Linux meme](/img/lb_linux_kidnap_meme.jpg)
 
 So for me the choice of organization was obvious - anything related to Linux.  
@@ -70,23 +69,23 @@ found to be the most crucial.
 #### Communication
 Definitely the most important part of the application process. Find 
 which tools organizations prefers for communication, for Gentoo it's 
-IRC chats (my IRC setup), 
+IRC chats (my IRC setup is described [here](https://labbrat.net/blog/irc_chats/)), 
 then add yourself to all the appropriate channels and start talking 
 to everyone! Opensource communities are generally very friendly and 
 welcoming and will be more than happy to answer all your questions.  
 
 #### Contributions
 Some organizations require you to make a contribution one of their 
-projects. This is a very fair requirements, because it tests your 
+projects. This is a very fair requirement, because it tests your 
 ability with `git` and the general ability to identify and fix issues.  
 
 It doesn't have to be a very complex contribution. For example, during 
-me application I bumped 
-a version of a package in Gentoo's GURU repository. I wrote about it 
-in more detail in here.
+me application I uploaded some packages to Gentoo's GURU repository, 
+and bumped the version of some existing ones. If you don't know what to 
+contribute - just ask the community!  
 
 #### Proposal
-A good proposal is based on feedback. Decided on a project as soon as 
+A good proposal is based on feedback. Decide on a project idea as soon as 
 possible and ask the project mentor to review your proposal. It's a 
 standard practice in most of the organizations and they will be happy 
 to do it, but it keep in mind that mentors are usually very busy so 
@@ -102,11 +101,11 @@ revisions from the project mentor.
 
 
 ### Result
-After contacting the community, discussing project idea, doing some 
-contributions, writing and submitting a proposal there is nothing 
+After contacting the community, discussing project idea with the mentor, 
+doing some contributions, writing and submitting a proposal there is nothing 
 else you can do but wait.  
 
-Organization after receiving all proposals will rank them. Then, 
+Organization after receiving all proposals will rank them internally. Then, 
 a request will be sent to Google for a certain number of slots 
 (basically a number of projects they want to host). Google will 
 most likely give an organization a bit less slots than they requested, 
@@ -116,4 +115,6 @@ A regular contributor won't play a part in this whole process and
 can just patiently wait for about a month for both side to make their 
 decision.
 
+Good luck with your application! And feel free to reach out to me if 
+you will have any questions 😌
 
