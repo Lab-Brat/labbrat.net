@@ -50,14 +50,14 @@ so I decided to apply!
 It's actually very simple - **don't try to be someone you are not!**  
 
 I work with Linux on my job everyday and use Gentoo on my personal laptop. 
-Honestly I think it's the best thing that came out of computer science field 
-thus far, and could talk about it for days.
-![Linux meme](/img/lb_linux_kidnap_meme.jpg)
+I have a lot of opinions about Linux and talk about it for days!  
+![Linux meme](/img/lb_linux_kidnap_meme.jpg#center)
 
 So for me the choice of organization was obvious - anything related to Linux.  
 
-I ended up choosing Gentoo Foundation mainly because of shared passion 
-for rolling release distros and because Gentoo is iconic.  
+At that time, Linux Foundation, Debian and Gentoo were the big organizations 
+related to Linux, and I ended up choosing Gentoo Foundation mainly because of 
+my love for rolling release distros and because they are iconic.  
 
 
 ### How to apply?
