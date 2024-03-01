@@ -31,19 +31,20 @@ Required [information](https://wiki.gentoo.org/wiki/Project:GURU/Information_for
 * public SSH key (`~/.ssh/id_gentoo.pub``)
 
 It also might be helpful to create GPG key at this point. 
-Follow their [guide](https://wiki.gentoo.org/wiki/Project:Infrastructure/Generating_GLEP_63_based_OpenPGP_keys) until `Submit the new key to the keyserver` section. 
-If everything was done correctly, there will be a set of GPG keys available on the system.
+Follow their [guide](https://wiki.gentoo.org/wiki/Project:Infrastructure/Generating_GLEP_63_based_OpenPGP_keys) 
+until `Submit the new key to the keyserver` section. 
+If everything was done correctly, there will be a set of GPG keys available on the system.  
 
 
 ### Step 2: Clone GURU
-Starting from this point, everything will be done on a Gentoo Linux machine.
+Starting from this point, everything will be done on a Gentoo Linux machine. 
 GURU repository can be cloned without any authentication with:
 ```bash
 git clone https://anongit.gentoo.org/git/repo/proj/guru.git
 ```
 
 But this method has limitations. For example, it is not possible to make changes and push 
-them to the repository. To be able to do that, SSH access (that was requested in Step 0) is required.  
+them to the repository. To be able to do that, SSH access (that was requested in Step 1) is required.  
 
 If the access was granted, add SSH and Gentoo git information to `~/.ssh/config`:
 ```
@@ -54,8 +55,7 @@ Host git.gentoo.org
 ```
 
 After that, `git` will know how to connect to Gentoo's git server, and it will be possible to 
-clone GURU repository with authentication.
-Navigate to `/var/db/repos` and clone the GURU repository:
+clone GURU repository with authentication. Navigate to `/var/db/repos` and clone the GURU repository:
 ```bash
 git clone -b dev git+ssh://git@git.gentoo.org/repo/proj/guru.git
 ```
