@@ -14,7 +14,7 @@ categories:
 
 ## Intro
 This article will show how to set-up a local email relay on a Linux machine 
-with `msmtp` to send emails through Gmail. 2 aproaches will be show - first 
+with `msmtp` to send emails through Gmail. 2 approaches will be show - first 
 one will use `msmtp` and `App Password`, the second one will use `msmtp` and
 `mailctl` to use OAuth 2.0 instead of passwords. Both of the methods will 
 require a Google account.  
@@ -39,7 +39,7 @@ Install msmtp:
 sudo emerge --ask --quiet-build mail-mta/msmtp
 ```
 
-Create a configuation file in `~/.msmtprc` with content below:
+Create a configuration file in `~/.msmtprc` with content below:
 ```
 defaults
 auth           on
@@ -71,7 +71,7 @@ create a separate account it. Detailed instructions can be found Google's offici
   * click on `Save and Continue`
   * Scopes: leave it empty since we will not be using the API
   * click on `Save and Continue`
-  * pubilsh the app
+  * publish the app
 * Create a new OAuth 2.0 credentials
   * open `Credentials` tab
   * click on `+ Create New Credentials` >> Create OAuth client ID 
@@ -182,10 +182,10 @@ echo -e "Subject: Gentoo Update Report\n\n$(gentoo-update report)" | msmtp -a de
 
 ## Links
 - [[Link](https://marlam.de/msmtp/documentation/)] - msmtp documentation
-- [[Link](https://github.com/marlam/msmtp)] - msmtp Github
-- [[Link](https://github.com/pdobsan/oama)] - mailctl Github
+- [[Link](https://github.com/marlam/msmtp)] - msmtp GitHub
+- [[Link](https://github.com/pdobsan/oama)] - mailctl GitHub
 - [[Link](https://support.google.com/accounts/answer/185833?hl=en)] - Google's documentation on how to set up App Password
-- [[Link](https://wiki.archlinux.org/title/msmtp)] - Arch Linux's article on mstmp
+- [[Link](https://wiki.archlinux.org/title/msmtp)] - Arch Linux's article on msmtp
 - [[Link](https://support.google.com/cloud/answer/6158849)] - Google's article on how to set up OAuth 2.0 in GCP
 - [[Link](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)] - Doc on GPG keys
 - [[Link](https://bence.ferdinandy.com/2023/07/20/email-in-the-terminal-a-complete-guide-to-the-unix-way-of-email/)] - Just a great article on email on Linux
