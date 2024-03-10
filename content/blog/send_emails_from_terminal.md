@@ -14,10 +14,13 @@ categories:
 
 ## Intro
 This article will show how to set-up a local email relay on a Linux machine 
-with `msmtp` to send emails through Gmail. 2 approaches will be show - first 
-one will use `msmtp` and `App Password`, the second one will use `msmtp` and
-`mailctl` to use OAuth 2.0 instead of passwords. Both of the methods will 
-require a Google account.  
+with `msmtp` to send emails through Gmail. 
+2 approaches will be shown:
+1. Simple approach: `msmtp` and `App Password`.
+2. More complex approach with `msmtp` and `mailctl` that uses OAuth 2.0 instead of a password.
+
+Both of the methods will require a Google account and some patience since there 
+will be some jumping through hoops to obtain correct credentials.  
 
 
 ## Configuration
@@ -81,7 +84,20 @@ create a separate account it. Detailed instructions can be found Google's offici
 * Save the Client ID and secret
 
 ### mailctl Configuration (Optional)
-Download `mailctl` binary, unpack it and create a symlink in `/usr/local/bin`:
+`mailctl` (repo is being re-branded as `oama`) is a tool that handles the OAuth 
+authentication flow for apps that doesn't have that functionality built-in, like 
+`msmtp`. After the flow is completed it creates an `Access Token` that can be 
+used to securely authenticate you Google account in `msmtp`. The token is then 
+encrypted with a GPG key and stored securely in `~/.local/var/mailctl`.  
+
+OAuth and GPG encryption can get very complicated and will not be covered in this 
+article, be I found some great resources 
+[here](https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc) and 
+[here](https://www.digitalocean.com/community/tutorials/how-to-use-gpg-to-encrypt-and-sign-messages), 
+respectively, that does a great job in showing how it all works.  
+
+Let's jump into `mailtcl` configuration. 
+First, download `mailctl` binary, unpack it and create a symlink in `/usr/local/bin`:
 ```bash
 wget https://github.com/pdobsan/oama/releases/download/0.9.2/mailctl-0.9.2-Linux-x86_64.tgz
 tar xzfv mailctl-0.9.2-Linux-x86_64.tgz
@@ -91,17 +107,20 @@ sudo ln -s mailctl-0.9.2-Linux-x86_64/mailctl /usr/local/bin/mailctl
 2 configuration files are required for it to work - `config.yaml` and `services.yaml`. 
 First one defines how the app itself works and the second one defines google-specific 
 settings. User is required to provide Client ID and secret from the previous steps 
-and a GPG public key to encrypt the resulting token. But first, let's make sure that 
-all config directories exist and create a GPG key (more on GPG keys 
-[here](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)):
+and a GPG public key to encrypt the resulting access token. 
+But first, let's make sure that all config directories exist:
 ```bash
 mkdir -p ~/.config/mailctl
 mkdir -p ~/.local/var/mailctl
-gpg --gen-key
 ```
 
-Save the public GPG key ID, it's a 17 character long string like this one `E69B67357XF632C8`. 
-Now it's time to configure the `mailctl`:
+and create a GPG key:
+```bash
+gpg --gen-key
+```
+The command above will prompt for some questions and will ask to create a password for the key. 
+After it's done, save the public GPG key ID, it's a 17 character long string like this one `E69B67357XF632C8`. 
+Now it's time to configure `mailctl`:
 ```yaml
 # ~/.config/mailctl/config.yaml
 services_file: ~/.config/mailctl/services.yaml
@@ -141,7 +160,7 @@ mailctl authorize google user-account@gmail.com
 ```
 
 This command will generate a link on localhost:8080 which will ask you 
-to authorize using the Google account that created the OAuth app. Then, 
+to authenticate using the Google account that created the OAuth app. Then, 
 run the command below to generate a token and encrypt it with the GPG key:
 ```bash
 mailctl access user-account@gmail.com
@@ -187,5 +206,6 @@ echo -e "Subject: Gentoo Update Report\n\n$(gentoo-update report)" | msmtp -a de
 - [[Link](https://support.google.com/accounts/answer/185833?hl=en)] - Google's documentation on how to set up App Password
 - [[Link](https://wiki.archlinux.org/title/msmtp)] - Arch Linux's article on msmtp
 - [[Link](https://support.google.com/cloud/answer/6158849)] - Google's article on how to set up OAuth 2.0 in GCP
-- [[Link](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)] - Doc on GPG keys
-- [[Link](https://bence.ferdinandy.com/2023/07/20/email-in-the-terminal-a-complete-guide-to-the-unix-way-of-email/)] - Just a great article on email on Linux
+- [[Link](https://www.digitalocean.com/community/tutorials/how-to-use-gpg-to-encrypt-and-sign-messages)] - Digital Ocean's guide on GPG encryption
+- [[Link](https://bence.ferdinandy.com/2023/07/20/email-in-the-terminal-a-complete-guide-to-the-unix-way-of-email/)] - A great article on email on Linux
+- [[Link](https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc)] - A great article + YouTube video about OAuth
