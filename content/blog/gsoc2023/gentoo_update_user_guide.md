@@ -99,6 +99,15 @@ export SENDGRID_API_KEY='SG.****************'
 gentoo-update report --send-report email
 ```
 
+**Email via local relay**
+`gentoo-update` works well with existing email relaying tools, such as `msmtp`. 
+Detailed guide on how to set it up can be found [here](https://labbrat.net/blog/send_emails_from_terminal/).  
+
+After relay is up, output from the app can be piped to it like so:
+```bash
+echo -e "Subject: Gentoo Update Report\n\n$(gentoo-update report)" | msmtp -a default <target-email>@gmail.com
+```
+
 Notifications can also be sent via the mobile app. 
 Details on this method will be elaborated in the following section.
 
