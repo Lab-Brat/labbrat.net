@@ -27,9 +27,9 @@ from which I have learned [alot](https://hyperboleandahalf.blogspot.com/2010/04/
 - [[Link](https://github.com/GoogleContainerTools/distroless)] - Distroless containers which are ridiculously small
 
 #### Tech
-- [[Link](https://system76.com/desktops/thelio-mega)] - PC from dreams
+- [[Link](https://system76.com/desktops/thelio-mega)] - Systemd76 workstation
 - [[Link](https://frame.work/)] - Framework laptops
-- [[Link](https://teenage.engineering/products)] - Audio stuff
+- [[Link](https://teenage.engineering/products)] - Teenage engineering audio tech
 - [[Link](https://knob.design/)] - Knob mechanical keyboard
 
 #### Misc
