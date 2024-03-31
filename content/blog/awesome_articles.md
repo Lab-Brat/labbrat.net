@@ -30,6 +30,7 @@ from which I have learned [alot](https://hyperboleandahalf.blogspot.com/2010/04/
 - [[Link](https://system76.com/desktops/thelio-mega)] - PC from dreams
 - [[Link](https://frame.work/)] - Framework laptops
 - [[Link](https://teenage.engineering/products)] - Audio stuff
+- [[Link](https://knob.design/)] - Knob mechanical keyboard
 
 #### Misc
 - [[Link](https://blog.samaltman.com/how-to-be-successful)] - How to be successful by Sam Altman
