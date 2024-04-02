@@ -9,15 +9,25 @@ categories:
 showToc: true
 ---
 
-Protonvpn CLI tool differs a bit from other distributions. 
-In Gentoo, after installing `net-vpn/protonvpn-cli` package 
-with Portage, `protonvpn-cli` command won't be available, 
-instead `protonvpn` command will be used. This is because 
-upstream of the 
-[ebuild](https://packages.gentoo.org/packages/net-vpn/protonvpn-cli) 
-is actually a CLI tool developed by the 
-[community](https://github.com/Rafficer/linux-cli-community), 
-and it's not the official ProtonVPN CLI.  
+Proton team does not build packages for Gentoo Linux, so we have to 
+figure out how to install it on our own. From what I have gathered, 
+there are 3 ways to go about it: download OpenVPN and Wireguard 
+configuration files from the ProtonVPN UI, install GUI and CLI apps 
+from sources or use community CLI.  
+
+## Configuration Files
+
+
+## Install From Sources
+
+
+## Community CLI
+> ⚠️ Since March 2023 Proton team stopped allowing API calls from 
+> the community project, details: https://github.com/Rafficer/linux-cli-community/issues/365
+
+[Community CLI](https://github.com/Rafficer/linux-cli-community) 
+can be installed via `net-vpn/protonvpn-cli` package. 
+After installation, run `protonvpn` command to establish to connect to VPN. 
 
 ### Installation
 Repository has the required package, so it can be easily emerged:
@@ -49,6 +59,7 @@ Everything else is pretty much the same. To connect just run:
 protonvpn c
 ```
 
-### Links
-* [[Link](https://github.com/Rafficer/linux-cli-community/blob/master/USAGE.md)] - Community CLI user guide
+## Links
+- [[Link](https://github.com/Rafficer/linux-cli-community/blob/master/USAGE.md)] - Community CLI user guide
 - [[Link](https://protonvpn.com/support/official-linux-client)] - Official tool
+
