@@ -28,7 +28,7 @@ For example, this was my request: https://bugs.gentoo.org/899896
 Required [information](https://wiki.gentoo.org/wiki/Project:GURU/Information_for_Contributors#:~:text=Once%20you%27re%20ready%2C%20please%20file%20an%20access%20request%2C%20including%3A):
 * Real name
 * Email
-* public SSH key (`~/.ssh/id_gentoo.pub``)
+* public SSH key
 
 It also might be helpful to create GPG key at this point. 
 Follow their [guide](https://wiki.gentoo.org/wiki/Project:Infrastructure/Generating_GLEP_63_based_OpenPGP_keys) 
@@ -51,7 +51,7 @@ If the access was granted, add SSH and Gentoo git information to `~/.ssh/config`
 Host git.gentoo.org
     HostName git.gentoo.org
     User git
-    IdentityFile ~/.ssh/id_gentoo
+    IdentityFile /path/to/public/ssh-key
 ```
 
 After that, `git` will know how to connect to Gentoo's git server, and it will be possible to 
@@ -86,17 +86,14 @@ Here are the steps to create a local repo named `labbrat`:
 mkdir -p /var/db/repos/labbrat/{metadata,profiles}
 chown -R portage:portage /var/db/repos/labbrat
 echo 'labbrat' > /var/db/repos/labbrat/profiles/repo_name 
-echo 'masters = gentoo' >> /var/db/repos/labbrat/metadata/layout.conf
-echo 'auto-sync = false' >> /var/db/repos/labbrat/metadata/layout.conf
-echo '[labbrat]' >> /etc/portage/repos.conf/labbrat.conf
-echo 'location = /var/db/repos/labbrat' >> /etc/portage/repos.conf/labbrat.conf
+echo -e 'masters = gentoo\nauto-sync = false' >> /var/db/repos/labbrat/metadata/layout.conf
+echo -e '[labbrat]\nlocation = /var/db/repos/labbrat' >> /etc/portage/repos.conf/labbrat.conf
 ```
 
 Then, to create an ebuild there:
 ```bash
-cd /var/db/repos/labbrat/
-mkdir -p app-misc/your-app
-cd app-misc/your-app
+mkdir -p /var/db/repos/labbrat/app-misc/your-app
+cd /var/db/repos/labbrat/app-misc/your-app
 vim your-app.ebuild # write an ebuild
 ebuild your-app.ebuild manifest
 ```
