@@ -16,9 +16,27 @@ configuration files from the ProtonVPN UI, install GUI and CLI apps
 from sources or use community CLI.  
 
 ## Configuration Files
+In the ProtonVPN personal settings configuration files can be downloaded 
+both for OpenVPN and Wireguard. To find them, go to:
+* Downloads
+* OpenVPN / Wireguard configuraion
+
+More details can be found if [official documentation](https://protonvpn.com/support/wireguard-manual-linux/). 
+The configuration files can be then used in the respective VPN clients.  
 
 
 ## Install From Sources
+This part is trickier. ProtonVPN CLI and GUI app have a lot of dependencies, and they are not 
+documented very well. Luckily, there is an existing ebuild written by [FlyingWaffleDev](https://github.com/FlyingWaffleDev) 
+that install ProtonVPN GUI GTK app.  
+
+To install it, first add the `waffle-build` overlay, and install the ebuild:
+```bash
+sudo eselect repository enable waffle-builds
+sudo emerge --ask --quiet-build net-vpn/proton-vpn-gtk-app
+```
+
+Finally, launch the app from the icon, login and connect to VPN!  
 
 
 ## Community CLI
@@ -60,6 +78,8 @@ protonvpn c
 ```
 
 ## Links
+- [[Link](https://protonvpn.com/support/wireguard-manual-linux/)] - Official guide on downloading and installing Wireguard Configuration files
 - [[Link](https://github.com/Rafficer/linux-cli-community/blob/master/USAGE.md)] - Community CLI user guide
-- [[Link](https://protonvpn.com/support/official-linux-client)] - Official tool
+- [[Link](https://protonvpn.com/support/official-linux-client)] - Official CLI tool
+- [[Link](https://github.com/FlyingWaffleDev/waffle-builds/tree/master/net-vpn/proton-vpn-gtk-app)] - Waffle Builds ProtonVPN GUI app ebuild
 
