@@ -36,6 +36,7 @@ from which I have learned [alot](https://hyperboleandahalf.blogspot.com/2010/04/
 #### Misc
 - [[Link](https://blog.samaltman.com/how-to-be-successful)] - How to be successful by Sam Altman
 - [[Link](https://www.corporate-rebels.com/blog/feedback-at-netflix)] - Feedback at Netflix
+- [[Link](https://ersei.net/en/blog/fuse-root)] - Booting Linux from Google Drive
 
 #### Resources
 - [[Link](https://0xax.gitbooks.io/linux-insides/content/index.html)] - Git book on Linux Kernel
