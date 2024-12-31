@@ -38,6 +38,7 @@ from which I have learned [alot](https://hyperboleandahalf.blogspot.com/2010/04/
 - [[Link](https://www.corporate-rebels.com/blog/feedback-at-netflix)] - Feedback at Netflix
 - [[Link](https://ersei.net/en/blog/fuse-root)] - Booting Linux from Google Drive
 - [[Link](https://newsletter.pragmaticengineer.com/p/trimodal-nature-of-tech-compensation?ref=blog.pragmaticengineer.com)] - trimodal salary tiers in IT
+- [[Link]](https://www.kirupa.com/hodgepodge/preserving_pixel_art_aesthetics.htm) - preserving pixelation in web apps
 
 #### Resources
 - [[Link](https://0xax.gitbooks.io/linux-insides/content/index.html)] - Git book on Linux Kernel
