@@ -1,4 +1,14 @@
-# Easily Deploy Virtual Machines in Hetzner Cloud Using Terraform: A Step-by-Step Guide
+---
+title: "Easily Deploy Virtual Machines in Hetzner Cloud Using Terraform: A Step-by-Step Guide"
+date: 2025-05-04T19:20:00Z
+tags:
+    - terraform
+    - hetzner
+    - iac
+categories:
+    - DevOps
+ShowToc: true
+---
 
 Deploying virtual machines can be manual, boring, and repetitive, but with the right tools, it becomes a seamless process. In this article, I’ll guide you through using Terraform to deploy five virtual machines in Hetzner Cloud. All the infrastructure component will be defined in Terraform files and stored in Git, adhering to Infrastructure As Code (IAC) principles.
 
