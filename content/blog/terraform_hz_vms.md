@@ -14,23 +14,24 @@ Deploying virtual machines can be manual, boring, and repetitive, but with the r
 
 All commands below are run on Ubuntu 24.04 OS, but it should be same on any other Linux distro or MacOS.
 
-## TLDR
-* Get the prerequisites - Hetzner Cloud account, create a project there, register and API key and have a SSH key locally. 
-* Install Terraform.
-* Clone the repository with Terraform files.
+{{< details title="**TLDR**" >}}
+  * Get the prerequisites - Hetzner Cloud account, create a project there, register an API token and generate a SSH key. 
+  * Install Terraform.
+  * Clone the repository with Terraform files.
+  ```
+  git clone https://github.com/Lab-Brat/terraform-hz-k8s.git && cd terraform-hz-k8s
+  ```
+  * Create `terraform.tfvars` by copying the template, and edit it and `vars.tf` with your information.
+  ```
+  cp terraform.tfvars.template terraform.tfvars
+  ```
+  * Init and deploy.
+  ```
+  terraform init
+  terraform plan
+  terraform apply
 ```
-git clone https://github.com/Lab-Brat/terraform-hz-k8s.git && cd terraform-hz-k8s
-```
-* Create `terraform.tfvars` by copying the template, and edit it and `vars.tf` with your information.
-```
-cp terraform.tfvars.template terraform.tfvars
-```
-* Init and deploy.
-```
-terraform init
-terraform plan
-terraform apply
-```
+{{< /details >}}
 
 ## Prerequisites
 
