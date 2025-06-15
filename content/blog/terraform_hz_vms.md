@@ -14,6 +14,8 @@ Deploying virtual machines can be manual, boring, and repetitive, but with the r
 
 All commands below are run on Ubuntu 24.04 OS, but it should be same on any other Linux distro or MacOS.
 
+> also published 👉[here](https://blog.devops.dev/easily-deploy-virtual-machines-in-hetzner-cloud-using-terraform-a-step-by-step-guide-78730ff874cd)
+
 {{< details title="**TLDR**" >}}
   * Get the prerequisites - Hetzner Cloud account, create a project there, register an API token and generate a SSH key. 
   * Install Terraform.
@@ -234,7 +236,7 @@ resource "hcloud_ssh_key" "default" {
 }
 ```
 
-Then, for each VM a primary IP is defined. This step is not strictly required, but it has certain benefits. For example if a VM is accidentally deleted and it doesn't have a primary IP, after it is recreated IP address might be different which could break compatability of the existing services.
+Then, for each VM a primary IP is defined. This step is not strictly required, but it has certain benefits. For example if a VM is accidentally deleted and it doesn't have a primary IP, after it is recreated IP address might be different which could break compatibility of the existing services.
 
 Here is the code:
 ```
