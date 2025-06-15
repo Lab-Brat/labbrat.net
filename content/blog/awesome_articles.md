@@ -39,6 +39,8 @@ from which I have learned [alot](https://hyperboleandahalf.blogspot.com/2010/04/
 - [[Link](https://ersei.net/en/blog/fuse-root)] - Booting Linux from Google Drive
 - [[Link](https://newsletter.pragmaticengineer.com/p/trimodal-nature-of-tech-compensation?ref=blog.pragmaticengineer.com)] - trimodal salary tiers in IT
 - [[Link]](https://www.kirupa.com/hodgepodge/preserving_pixel_art_aesthetics.htm) - preserving pixelation in web apps
+- [[Link]](https://taylor.town/) - i don't know what this is but I can't stop looking at it
+- [[Link]](https://gwern.net/me) - same as above
 
 #### Resources
 - [[Link](https://0xax.gitbooks.io/linux-insides/content/index.html)] - Git book on Linux Kernel
