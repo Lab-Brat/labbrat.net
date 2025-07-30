@@ -41,6 +41,7 @@ from which I have learned [alot](https://hyperboleandahalf.blogspot.com/2010/04/
 - [[Link]](https://www.kirupa.com/hodgepodge/preserving_pixel_art_aesthetics.htm) - preserving pixelation in web apps
 - [[Link]](https://taylor.town/) - i don't know what this is but I can't stop looking at it
 - [[Link]](https://gwern.net/me) - same as above
+- [[Link]](https://www.laurieherault.com/articles/a-thermal-receipt-printer-cured-my-procrastination) - using label maker to fix procrastination, brilliant
 
 #### Resources
 - [[Link](https://0xax.gitbooks.io/linux-insides/content/index.html)] - Git book on Linux Kernel
